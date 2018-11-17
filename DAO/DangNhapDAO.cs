@@ -29,14 +29,23 @@ namespace DAO
         {
             MongoClient client = new MongoClient("mongodb://localhost:27017");
             IMongoDatabase database = client.GetDatabase("HotelManager");
-            IMongoCollection<BsonDocument> collection = database.GetCollection<BsonDocument>("Users");
+            //IMongoCollection<BsonDocument> collection = database.GetCollection<BsonDocument>("Users");
+            //var el = BsonDocument.Parse("{$and:[{\"IdNhanVien\":\"" + userDTO.IdNhanVien + "\"}, {\"Password\":\"" + userDTO.Pass + "\"}]}");
+            //var doc = new QueryDocument(el);
+            //int result = (int)collection.Find(doc).Count();
+            //return (result > 0);
+
+            var cmd = new JsonCommand<BsonDocument>("{ eval: \"kiemTraUser('" + userDTO.IdNhanVien + "','" + userDTO.Pass + "')\" }");
+            var result = database.RunCommand(cmd);
+            return result["retval"].ToBoolean();
+
+
+
+
+
             //var query_id = Query.EQ("_id", ObjectId.Parse("50ed4e7d5baffd13a44d0153"));
             //var entity = collection.Find(query_id);
             //return entity.ToString();
-            var el = BsonDocument.Parse("{$and:[{\"IdNhanVien\":\"" + userDTO.IdNhanVien + "\"}, {\"Password\":\"" + userDTO.Pass + "\"}]}");
-            var doc = new QueryDocument(el);
-            int result = (int)collection.Find(doc).Count();
-            return (result > 0);
             //string query = "Select * From Users Where IDNhanVien = '" + userDTO.IdNhanVien + "' and Pass = '" + userDTO.Pass + "'";
             //DataTable dtb = DataProvider.Instance.getDS(query);
             //return (dtb.Rows.Count > 0);
