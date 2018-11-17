@@ -44,7 +44,7 @@
             this.gridSplitContainer1 = new DevExpress.XtraGrid.GridSplitContainer();
             this.dgvDichVu = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Ten = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Gia = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grpChucNang)).BeginInit();
@@ -152,7 +152,7 @@
             // 
             this.txtGia.Location = new System.Drawing.Point(305, 286);
             this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(368, 42);
+            this.txtGia.Size = new System.Drawing.Size(368, 50);
             this.txtGia.TabIndex = 2;
             this.txtGia.Click += new System.EventHandler(this.txt_Click);
             // 
@@ -160,7 +160,7 @@
             // 
             this.txtTenDichVu.Location = new System.Drawing.Point(305, 203);
             this.txtTenDichVu.Name = "txtTenDichVu";
-            this.txtTenDichVu.Size = new System.Drawing.Size(368, 42);
+            this.txtTenDichVu.Size = new System.Drawing.Size(368, 50);
             this.txtTenDichVu.TabIndex = 1;
             this.txtTenDichVu.Click += new System.EventHandler(this.txt_Click);
             // 
@@ -168,7 +168,7 @@
             // 
             this.txtID.Location = new System.Drawing.Point(305, 120);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(368, 42);
+            this.txtID.Size = new System.Drawing.Size(368, 50);
             this.txtID.TabIndex = 15;
             // 
             // grpDanhSach
@@ -184,10 +184,10 @@
             // 
             this.gridSplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridSplitContainer1.Grid = this.dgvDichVu;
-            this.gridSplitContainer1.Location = new System.Drawing.Point(4, 52);
+            this.gridSplitContainer1.Location = new System.Drawing.Point(3, 48);
             this.gridSplitContainer1.Name = "gridSplitContainer1";
             this.gridSplitContainer1.Panel1.Controls.Add(this.dgvDichVu);
-            this.gridSplitContainer1.Size = new System.Drawing.Size(959, 727);
+            this.gridSplitContainer1.Size = new System.Drawing.Size(961, 732);
             this.gridSplitContainer1.TabIndex = 0;
             // 
             // dgvDichVu
@@ -196,7 +196,7 @@
             this.dgvDichVu.Location = new System.Drawing.Point(0, 0);
             this.dgvDichVu.MainView = this.gridView1;
             this.dgvDichVu.Name = "dgvDichVu";
-            this.dgvDichVu.Size = new System.Drawing.Size(959, 727);
+            this.dgvDichVu.Size = new System.Drawing.Size(961, 732);
             this.dgvDichVu.TabIndex = 0;
             this.dgvDichVu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -204,21 +204,21 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.ID,
+            this.Id,
             this.Ten,
             this.Gia});
             this.gridView1.GridControl = this.dgvDichVu;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             // 
-            // ID
+            // Id
             // 
-            this.ID.Caption = "ID";
-            this.ID.FieldName = "ID";
-            this.ID.Name = "ID";
-            this.ID.Visible = true;
-            this.ID.VisibleIndex = 0;
-            this.ID.Width = 152;
+            this.Id.Caption = "ID";
+            this.Id.FieldName = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = true;
+            this.Id.VisibleIndex = 0;
+            this.Id.Width = 152;
             // 
             // Ten
             // 
@@ -284,7 +284,7 @@
         private DevExpress.XtraGrid.GridSplitContainer gridSplitContainer1;
         private DevExpress.XtraGrid.GridControl dgvDichVu;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn ID;
+        private DevExpress.XtraGrid.Columns.GridColumn Id;
         private DevExpress.XtraGrid.Columns.GridColumn Ten;
         private DevExpress.XtraGrid.Columns.GridColumn Gia;
     }

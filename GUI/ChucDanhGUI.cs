@@ -40,8 +40,8 @@ namespace GUI
             BindingSource source = new BindingSource();
             source.DataSource = ChucDanhBUS.Instance.DSChucDanh();
             source.DataSource = dgvChucDanh.DataSource;
-            txtID.DataBindings.Add("Text", source, "ID", true, DataSourceUpdateMode.OnPropertyChanged);
-            txtTenChucDanh.DataBindings.Add("Text", source, "Ten", true, DataSourceUpdateMode.OnPropertyChanged);
+            txtID.DataBindings.Add("Text", source, "Id", true, DataSourceUpdateMode.OnPropertyChanged);
+            txtTenChucDanh.DataBindings.Add("Text", source, "TenChucDanh", true, DataSourceUpdateMode.OnPropertyChanged);
             dgvChucDanh.DataSource = source;
         }
 

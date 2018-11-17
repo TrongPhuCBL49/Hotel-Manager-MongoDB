@@ -24,37 +24,42 @@ namespace DAO
 
         private DatPhongDAO() { }
         public DataRow ThongTinKhachHang(string TenKhachHang)
-        { 
-            string query = "Select * From KhachHang Where Ten = N'" + TenKhachHang + "'";
-            DataTable dtb = DataProvider.Instance.getDS(query);
-            return dtb.Rows[0];
+        {
+            //string query = "Select * From KhachHang Where Ten = N'" + TenKhachHang + "'";
+            //DataTable dtb = DataProvider.Instance.getDS(query);
+            //return dtb.Rows[0];
+            return null;
         }
         public bool ThemBangThuePhong(BangThuePhongDTO bangThuePhong)
         {
-            string[] param = { "@IDPhong", "@IDNhanVien", "@IDKhachHang", "@CheckIn", "@CheckOut", "@TienDatCoc", "@TrangThai" };
-            object[] values = { bangThuePhong.IdPhong, bangThuePhong.IdNhanVien, bangThuePhong.IdKhachHang, bangThuePhong.CheckIn, bangThuePhong.CheckOut, bangThuePhong.TienDatCoc, bangThuePhong.TrangThai };
-            string query = "Insert Into BangThuePhong Values(@IDPhong,@IDNhanVien,@IDKhachHang,convert(date,@CheckIn,105),convert(date,@CheckOut,105),@TienDatCoc,@TrangThai)";
-            return DataProvider.Instance.ExecuteNonQueryPara(query, param, values);
+            //string[] param = { "@IDPhong", "@IDNhanVien", "@IDKhachHang", "@CheckIn", "@CheckOut", "@TienDatCoc", "@TrangThai" };
+            //object[] values = { bangThuePhong.IdPhong, bangThuePhong.IdNhanVien, bangThuePhong.IdKhachHang, bangThuePhong.CheckIn, bangThuePhong.CheckOut, bangThuePhong.TienDatCoc, bangThuePhong.TrangThai };
+            //string query = "Insert Into BangThuePhong Values(@IDPhong,@IDNhanVien,@IDKhachHang,convert(date,@CheckIn,105),convert(date,@CheckOut,105),@TienDatCoc,@TrangThai)";
+            //return DataProvider.Instance.ExecuteNonQueryPara(query, param, values);
+            return true;
         }
         public string IdPhong(string tenPhong)
         {
-            string query = "Select ID From Phong Where Ten = N'" + tenPhong + "'";
-            DataTable dtb = DataProvider.Instance.getDS(query);
-            return dtb.Rows[0]["ID"].ToString();
+            //string query = "Select ID From Phong Where Ten = N'" + tenPhong + "'";
+            //DataTable dtb = DataProvider.Instance.getDS(query);
+            //return dtb.Rows[0]["ID"].ToString();
+            return null;
         }
         public string TenNhanVien(string idNhanVien)
         {
-            string query = "Select Ten From NhanVien Where ID = N'" + idNhanVien + "'";
-            DataTable dtb = DataProvider.Instance.getDS(query);
-            return dtb.Rows[0]["Ten"].ToString();
+            //string query = "Select Ten From NhanVien Where ID = N'" + idNhanVien + "'";
+            //DataTable dtb = DataProvider.Instance.getDS(query);
+            //return dtb.Rows[0]["Ten"].ToString();
+            return null;
         }
 
         public bool UpdateTrangThaiPhong(string tenPhong)
         {
-            string[] param = { "@Ten", "@IDTrangThai" };
-            object[] values = { tenPhong, 2 };
-            string query = "Update Phong Set IDTrangThai=@IDTrangThai Where Ten=@Ten";
-            return DataProvider.Instance.ExecuteNonQueryPara(query, param, values);
+            //string[] param = { "@Ten", "@IDTrangThai" };
+            //object[] values = { tenPhong, 2 };
+            //string query = "Update Phong Set IDTrangThai=@IDTrangThai Where Ten=@Ten";
+            //return DataProvider.Instance.ExecuteNonQueryPara(query, param, values);
+            return true;
         }
 
     }

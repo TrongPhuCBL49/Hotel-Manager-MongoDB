@@ -46,7 +46,7 @@
             this.gridSplitContainer1 = new DevExpress.XtraGrid.GridSplitContainer();
             this.dgvPhong = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Ten = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LoaiPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TrangThai = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -136,7 +136,7 @@
             this.cboTrangThai.Name = "cboTrangThai";
             this.cboTrangThai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cboTrangThai.Size = new System.Drawing.Size(368, 42);
+            this.cboTrangThai.Size = new System.Drawing.Size(368, 50);
             this.cboTrangThai.TabIndex = 3;
             this.cboTrangThai.Click += new System.EventHandler(this.txt_Click);
             // 
@@ -146,7 +146,7 @@
             this.cboLoaiPhong.Name = "cboLoaiPhong";
             this.cboLoaiPhong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cboLoaiPhong.Size = new System.Drawing.Size(368, 42);
+            this.cboLoaiPhong.Size = new System.Drawing.Size(368, 50);
             this.cboLoaiPhong.TabIndex = 3;
             this.cboLoaiPhong.Click += new System.EventHandler(this.txt_Click);
             // 
@@ -186,7 +186,7 @@
             // 
             this.txtTenPhong.Location = new System.Drawing.Point(302, 185);
             this.txtTenPhong.Name = "txtTenPhong";
-            this.txtTenPhong.Size = new System.Drawing.Size(368, 42);
+            this.txtTenPhong.Size = new System.Drawing.Size(368, 50);
             this.txtTenPhong.TabIndex = 2;
             this.txtTenPhong.Click += new System.EventHandler(this.txt_Click);
             // 
@@ -194,7 +194,7 @@
             // 
             this.txtID.Location = new System.Drawing.Point(302, 102);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(368, 42);
+            this.txtID.Size = new System.Drawing.Size(368, 50);
             this.txtID.TabIndex = 1;
             // 
             // grpDanhSach
@@ -210,10 +210,10 @@
             // 
             this.gridSplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridSplitContainer1.Grid = this.dgvPhong;
-            this.gridSplitContainer1.Location = new System.Drawing.Point(4, 52);
+            this.gridSplitContainer1.Location = new System.Drawing.Point(3, 48);
             this.gridSplitContainer1.Name = "gridSplitContainer1";
             this.gridSplitContainer1.Panel1.Controls.Add(this.dgvPhong);
-            this.gridSplitContainer1.Size = new System.Drawing.Size(1104, 752);
+            this.gridSplitContainer1.Size = new System.Drawing.Size(1106, 757);
             this.gridSplitContainer1.TabIndex = 0;
             // 
             // dgvPhong
@@ -222,7 +222,7 @@
             this.dgvPhong.Location = new System.Drawing.Point(0, 0);
             this.dgvPhong.MainView = this.gridView1;
             this.dgvPhong.Name = "dgvPhong";
-            this.dgvPhong.Size = new System.Drawing.Size(1104, 752);
+            this.dgvPhong.Size = new System.Drawing.Size(1106, 757);
             this.dgvPhong.TabIndex = 0;
             this.dgvPhong.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -230,7 +230,7 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.ID,
+            this.Id,
             this.Ten,
             this.LoaiPhong,
             this.TrangThai});
@@ -238,14 +238,14 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             // 
-            // ID
+            // Id
             // 
-            this.ID.Caption = "ID";
-            this.ID.FieldName = "ID";
-            this.ID.Name = "ID";
-            this.ID.Visible = true;
-            this.ID.VisibleIndex = 0;
-            this.ID.Width = 162;
+            this.Id.Caption = "ID";
+            this.Id.FieldName = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = true;
+            this.Id.VisibleIndex = 0;
+            this.Id.Width = 162;
             // 
             // Ten
             // 
@@ -321,7 +321,7 @@
         private DevExpress.XtraGrid.GridSplitContainer gridSplitContainer1;
         private DevExpress.XtraGrid.GridControl dgvPhong;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn ID;
+        private DevExpress.XtraGrid.Columns.GridColumn Id;
         private DevExpress.XtraGrid.Columns.GridColumn Ten;
         private DevExpress.XtraGrid.Columns.GridColumn LoaiPhong;
         private DevExpress.XtraGrid.Columns.GridColumn TrangThai;

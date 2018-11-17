@@ -8,12 +8,12 @@ namespace DTO
 {
     public class DichVuDTO
     {
-        private int _id;
+        private string _id;
         private string _ten;
-        private int _gia;
+        private string _gia;
 
-        public int Id { get => _id; set => _id = value; }
+        public string Id { get => _id; set => _id = value; }
         public string Ten { get => _ten; set => _ten = value; }
-        public int Gia { get => _gia; set => _gia = value; }
+        public string Gia { get => _gia; set => _gia = value; }
     }
 }

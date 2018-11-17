@@ -56,7 +56,7 @@ namespace GUI
             BindingSource source = new BindingSource();
             source.DataSource = PhongBUS.Instance.DSPhong();
             source.DataSource = dgvPhong.DataSource;
-            txtID.DataBindings.Add("Text", source, "ID", true, DataSourceUpdateMode.OnPropertyChanged);
+            txtID.DataBindings.Add("Text", source, "Id", true, DataSourceUpdateMode.OnPropertyChanged);
             txtTenPhong.DataBindings.Add("Text", source, "Ten", true, DataSourceUpdateMode.OnPropertyChanged);
             cboLoaiPhong.DataBindings.Add("Text", source, "LoaiPhong", true, DataSourceUpdateMode.OnPropertyChanged);
             cboTrangThai.DataBindings.Add("Text", source, "TrangThai", true, DataSourceUpdateMode.OnPropertyChanged);

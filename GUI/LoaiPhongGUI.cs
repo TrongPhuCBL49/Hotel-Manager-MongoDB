@@ -40,7 +40,7 @@ namespace GUI
             BindingSource source = new BindingSource();
             source.DataSource = LoaiPhongBUS.Instance.DSLoaiPhong();
             source.DataSource = dgvLoaiPhong.DataSource;
-            txtID.DataBindings.Add("Text", source, "ID", true, DataSourceUpdateMode.OnPropertyChanged);
+            txtID.DataBindings.Add("Text", source, "Id", true, DataSourceUpdateMode.OnPropertyChanged);
             txtTenLoaiPhong.DataBindings.Add("Text", source, "Ten", true, DataSourceUpdateMode.OnPropertyChanged);
             txtSoGiuong.DataBindings.Add("Text", source, "SoGiuong", true, DataSourceUpdateMode.OnPropertyChanged);
             txtGia.DataBindings.Add("Text", source, "Gia", true, DataSourceUpdateMode.OnPropertyChanged);

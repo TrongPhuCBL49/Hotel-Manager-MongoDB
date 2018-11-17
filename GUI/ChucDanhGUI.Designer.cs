@@ -42,8 +42,8 @@
             this.gridSplitContainer1 = new DevExpress.XtraGrid.GridSplitContainer();
             this.dgvChucDanh = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Ten = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TenChucDanh = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grpChucNang)).BeginInit();
             this.grpChucNang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpThongTin)).BeginInit();
@@ -138,7 +138,7 @@
             // 
             this.txtTenChucDanh.Location = new System.Drawing.Point(305, 203);
             this.txtTenChucDanh.Name = "txtTenChucDanh";
-            this.txtTenChucDanh.Size = new System.Drawing.Size(368, 42);
+            this.txtTenChucDanh.Size = new System.Drawing.Size(368, 50);
             this.txtTenChucDanh.TabIndex = 1;
             this.txtTenChucDanh.Click += new System.EventHandler(this.txt_Click);
             // 
@@ -146,7 +146,7 @@
             // 
             this.txtID.Location = new System.Drawing.Point(305, 120);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(368, 42);
+            this.txtID.Size = new System.Drawing.Size(368, 50);
             this.txtID.TabIndex = 15;
             // 
             // grpDanhSach
@@ -162,10 +162,10 @@
             // 
             this.gridSplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridSplitContainer1.Grid = this.dgvChucDanh;
-            this.gridSplitContainer1.Location = new System.Drawing.Point(4, 52);
+            this.gridSplitContainer1.Location = new System.Drawing.Point(3, 48);
             this.gridSplitContainer1.Name = "gridSplitContainer1";
             this.gridSplitContainer1.Panel1.Controls.Add(this.dgvChucDanh);
-            this.gridSplitContainer1.Size = new System.Drawing.Size(667, 628);
+            this.gridSplitContainer1.Size = new System.Drawing.Size(669, 633);
             this.gridSplitContainer1.TabIndex = 0;
             // 
             // dgvChucDanh
@@ -174,7 +174,7 @@
             this.dgvChucDanh.Location = new System.Drawing.Point(0, 0);
             this.dgvChucDanh.MainView = this.gridView1;
             this.dgvChucDanh.Name = "dgvChucDanh";
-            this.dgvChucDanh.Size = new System.Drawing.Size(667, 628);
+            this.dgvChucDanh.Size = new System.Drawing.Size(669, 633);
             this.dgvChucDanh.TabIndex = 0;
             this.dgvChucDanh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -182,29 +182,29 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.ID,
-            this.Ten});
+            this.Id,
+            this.TenChucDanh});
             this.gridView1.GridControl = this.dgvChucDanh;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             // 
-            // ID
+            // Id
             // 
-            this.ID.Caption = "ID";
-            this.ID.FieldName = "ID";
-            this.ID.Name = "ID";
-            this.ID.Visible = true;
-            this.ID.VisibleIndex = 0;
-            this.ID.Width = 161;
+            this.Id.Caption = "ID";
+            this.Id.FieldName = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = true;
+            this.Id.VisibleIndex = 0;
+            this.Id.Width = 161;
             // 
-            // Ten
+            // TenChucDanh
             // 
-            this.Ten.Caption = "Tên chức danh";
-            this.Ten.FieldName = "Ten";
-            this.Ten.Name = "Ten";
-            this.Ten.Visible = true;
-            this.Ten.VisibleIndex = 1;
-            this.Ten.Width = 467;
+            this.TenChucDanh.Caption = "Tên chức danh";
+            this.TenChucDanh.FieldName = "TenChucDanh";
+            this.TenChucDanh.Name = "TenChucDanh";
+            this.TenChucDanh.Visible = true;
+            this.TenChucDanh.VisibleIndex = 1;
+            this.TenChucDanh.Width = 467;
             // 
             // ChucDanhGUI
             // 
@@ -249,7 +249,7 @@
         private DevExpress.XtraGrid.GridSplitContainer gridSplitContainer1;
         private DevExpress.XtraGrid.GridControl dgvChucDanh;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn ID;
-        private DevExpress.XtraGrid.Columns.GridColumn Ten;
+        private DevExpress.XtraGrid.Columns.GridColumn Id;
+        private DevExpress.XtraGrid.Columns.GridColumn TenChucDanh;
     }
 }

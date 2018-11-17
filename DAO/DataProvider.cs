@@ -6,11 +6,19 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
+using MongoDB.Driver;
+using MongoDB.Bson;
 
 namespace DAO
 {
     public class DataProvider
     {
+        const string strCon = "mongodb://localhost:27017";
+        const string nameDtb = "HotelManager";
+
+        MongoClient client;
+        IMongoDatabase database;
+
         private static DataProvider instance;
         public static DataProvider Instance
         {
@@ -22,10 +30,6 @@ namespace DAO
             } 
         }
 
-        SqlConnection con;
-        SqlDataAdapter dap;
-        SqlCommand cmd;
-
         private DataProvider()
         {
             connectDB();
@@ -34,117 +38,138 @@ namespace DAO
         //Kết nối
         public void connectDB()
         {
-            string strCon = "Data Source=DESKTOP-DBIPD3F;" +
-                            "Initial Catalog=SimpleQuanLyKhachSan;" +
-                            "Integrated Security=True";
-            con = new SqlConnection(strCon);
-            cmd = con.CreateCommand();
+            //    string strCon = "Data Source=DESKTOP-DBIPD3F;" +
+            //                    "Initial Catalog=SimpleQuanLyKhachSan;" +
+            //                    "Integrated Security=True";
+            //    con = new SqlConnection(strCon);
+            //    cmd = con.CreateCommand();
             try
             {
-                con.Open();
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-                con.Dispose();
-            }
-        }
-
-        //Thực hiện câu lệnh sql trả về bảng dữ liệu
-        public DataTable getDS(string sql)
-        {
-            DataTable tbl = new DataTable();
-            dap = new SqlDataAdapter(sql, con);
-            dap.Fill(tbl);
-            return tbl;
-        }
-        public object ExecuteScalar(string strSQL, CommandType ct)
-        {
-            if (con.State == ConnectionState.Open)
-                con.Close();
-            con.Open();
-            cmd.CommandText = strSQL;
-            cmd.CommandType = ct;
-            object Data = cmd.ExecuteScalar();
-            return Data;
-        }
-
-        //Thực thi lệnh sql chèn, xóa, sửa
-        public bool ExecuteNonQueryPara(string sql, string[] parameters, object[] value)
-        {
-            int num = 0;
-            try
-            {
-                if (con.State == ConnectionState.Closed)
-                    con.Open();
-                cmd = new SqlCommand(sql, con);
-                SqlParameter p;
-                for (int i = 0; i < parameters.Length; i++)
-                {
-                    p = new SqlParameter(parameters[i], value[i]);
-                    cmd.Parameters.Add(p);
-                }
-                num = cmd.ExecuteNonQuery();
+                client = new MongoClient(strCon);
+                database = client.GetDatabase(nameDtb);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-            if (num > 0)
-                return true;
-            else
-                return false;
+            //    try
+            //    {
+            //        con.Open();
+            //        con.Close();
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show("Error: " + ex.Message);
+            //        con.Dispose();
+            //    }
         }
 
-        public bool ExecuteQuery(string sql)
+        ////Thực hiện câu lệnh sql trả về bảng dữ liệu
+        public List<BsonDocument> getDocuments(string nameColl)
         {
-            int num = 0;
             try
             {
-                if (con.State == ConnectionState.Closed)
-                    con.Open();
-                cmd = new SqlCommand(sql, con);
-                num = (int)cmd.ExecuteNonQuery();
+                IMongoCollection<BsonDocument> collection = database.GetCollection<BsonDocument>(nameColl);
+                List<BsonDocument> documents = collection.Find(new BsonDocument()).ToListAsync().Result;
+                return documents;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
+                return null;
             }
-            if (num > 0)
-                return true;
-            else
-                return false;
-        }
 
-        //Kiểm tra sự tồn tại
-        public bool checkExist(string tblName, string field, string value)
-        {
-            string sql = "Select Count (*) From " + tblName + " where " + field + "='" + value + "'";
-            cmd = new SqlCommand(sql, con);
-            int num = 0;
-            try
-            {
-                if (con.State == ConnectionState.Closed)
-                    con.Open();
-                num = (int)cmd.ExecuteScalar();
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-            if (num > 0)
-                return true;
-            else
-                return false;
+            //    DataTable tbl = new DataTable();
+            //    dap = new SqlDataAdapter(sql, con);
+            //    dap.Fill(tbl);
+            //    return tbl;
         }
+        //public object ExecuteScalar(string strSQL, CommandType ct)
+        //{
+        //    if (con.State == ConnectionState.Open)
+        //        con.Close();
+        //    con.Open();
+        //    cmd.CommandText = strSQL;
+        //    cmd.CommandType = ct;
+        //    object Data = cmd.ExecuteScalar();
+        //    return Data;
+        //}
 
-        // Lấy mã cuối cùng
-        public string GetLastID(string nameTable, string nameFiled)
-        {
-            string sql = "SELECT TOP (1) " + nameFiled + " FROM " + nameTable + " ORDER BY " + nameFiled + " DESC";
-            return getDS(sql).Rows[0][nameFiled].ToString();
-        }
+        ////Thực thi lệnh sql chèn, xóa, sửa
+        //public bool ExecuteNonQueryPara(string sql, string[] parameters, object[] value)
+        //{
+        //    int num = 0;
+        //    try
+        //    {
+        //        if (con.State == ConnectionState.Closed)
+        //            con.Open();
+        //        cmd = new SqlCommand(sql, con);
+        //        SqlParameter p;
+        //        for (int i = 0; i < parameters.Length; i++)
+        //        {
+        //            p = new SqlParameter(parameters[i], value[i]);
+        //            cmd.Parameters.Add(p);
+        //        }
+        //        num = cmd.ExecuteNonQuery();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error: " + ex.Message);
+        //    }
+        //    if (num > 0)
+        //        return true;
+        //    else
+        //        return false;
+        //}
+
+        //public bool ExecuteQuery(string sql)
+        //{
+        //    int num = 0;
+        //    try
+        //    {
+        //        if (con.State == ConnectionState.Closed)
+        //            con.Open();
+        //        cmd = new SqlCommand(sql, con);
+        //        num = (int)cmd.ExecuteNonQuery();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error: " + ex.Message);
+        //    }
+        //    if (num > 0)
+        //        return true;
+        //    else
+        //        return false;
+        //}
+
+        ////Kiểm tra sự tồn tại
+        //public bool checkExist(string tblName, string field, string value)
+        //{
+        //    string sql = "Select Count (*) From " + tblName + " where " + field + "='" + value + "'";
+        //    cmd = new SqlCommand(sql, con);
+        //    int num = 0;
+        //    try
+        //    {
+        //        if (con.State == ConnectionState.Closed)
+        //            con.Open();
+        //        num = (int)cmd.ExecuteScalar();
+        //        con.Close();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error: " + ex.Message);
+        //    }
+        //    if (num > 0)
+        //        return true;
+        //    else
+        //        return false;
+        //}
+
+        //// Lấy mã cuối cùng
+        //public string GetLastID(string nameTable, string nameFiled)
+        //{
+        //    string sql = "SELECT TOP (1) " + nameFiled + " FROM " + nameTable + " ORDER BY " + nameFiled + " DESC";
+        //    return getDS(sql).Rows[0][nameFiled].ToString();
+        //} 
     }
 }

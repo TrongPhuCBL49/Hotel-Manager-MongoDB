@@ -48,7 +48,7 @@
             this.gridSplitContainer1 = new DevExpress.XtraGrid.GridSplitContainer();
             this.dgvLoaiPhong = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Ten = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Gia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TienPhuThu = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -148,7 +148,7 @@
             // 
             this.txtSoGiuong.Location = new System.Drawing.Point(366, 275);
             this.txtSoGiuong.Name = "txtSoGiuong";
-            this.txtSoGiuong.Size = new System.Drawing.Size(368, 42);
+            this.txtSoGiuong.Size = new System.Drawing.Size(368, 50);
             this.txtSoGiuong.TabIndex = 2;
             this.txtSoGiuong.Click += new System.EventHandler(this.txt_Click);
             // 
@@ -164,7 +164,7 @@
             // 
             this.txtTenLoaiPhong.Location = new System.Drawing.Point(366, 195);
             this.txtTenLoaiPhong.Name = "txtTenLoaiPhong";
-            this.txtTenLoaiPhong.Size = new System.Drawing.Size(368, 42);
+            this.txtTenLoaiPhong.Size = new System.Drawing.Size(368, 50);
             this.txtTenLoaiPhong.TabIndex = 1;
             this.txtTenLoaiPhong.Click += new System.EventHandler(this.txt_Click);
             // 
@@ -196,7 +196,7 @@
             // 
             this.txtTienPhuThu.Location = new System.Drawing.Point(1132, 243);
             this.txtTienPhuThu.Name = "txtTienPhuThu";
-            this.txtTienPhuThu.Size = new System.Drawing.Size(368, 42);
+            this.txtTienPhuThu.Size = new System.Drawing.Size(368, 50);
             this.txtTienPhuThu.TabIndex = 4;
             this.txtTienPhuThu.Click += new System.EventHandler(this.txt_Click);
             // 
@@ -204,7 +204,7 @@
             // 
             this.txtGia.Location = new System.Drawing.Point(1132, 165);
             this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(368, 42);
+            this.txtGia.Size = new System.Drawing.Size(368, 50);
             this.txtGia.TabIndex = 3;
             this.txtGia.Click += new System.EventHandler(this.txt_Click);
             // 
@@ -212,7 +212,7 @@
             // 
             this.txtID.Location = new System.Drawing.Point(366, 112);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(368, 42);
+            this.txtID.Size = new System.Drawing.Size(368, 50);
             this.txtID.TabIndex = 15;
             // 
             // grpDanhSach
@@ -228,10 +228,10 @@
             // 
             this.gridSplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridSplitContainer1.Grid = this.dgvLoaiPhong;
-            this.gridSplitContainer1.Location = new System.Drawing.Point(4, 52);
+            this.gridSplitContainer1.Location = new System.Drawing.Point(3, 48);
             this.gridSplitContainer1.Name = "gridSplitContainer1";
             this.gridSplitContainer1.Panel1.Controls.Add(this.dgvLoaiPhong);
-            this.gridSplitContainer1.Size = new System.Drawing.Size(2196, 628);
+            this.gridSplitContainer1.Size = new System.Drawing.Size(2198, 633);
             this.gridSplitContainer1.TabIndex = 0;
             // 
             // dgvLoaiPhong
@@ -240,7 +240,7 @@
             this.dgvLoaiPhong.Location = new System.Drawing.Point(0, 0);
             this.dgvLoaiPhong.MainView = this.gridView1;
             this.dgvLoaiPhong.Name = "dgvLoaiPhong";
-            this.dgvLoaiPhong.Size = new System.Drawing.Size(2196, 628);
+            this.dgvLoaiPhong.Size = new System.Drawing.Size(2198, 633);
             this.dgvLoaiPhong.TabIndex = 0;
             this.dgvLoaiPhong.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -248,7 +248,7 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.ID,
+            this.Id,
             this.Ten,
             this.Gia,
             this.TienPhuThu,
@@ -257,13 +257,13 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             // 
-            // ID
+            // Id
             // 
-            this.ID.Caption = "ID";
-            this.ID.FieldName = "ID";
-            this.ID.Name = "ID";
-            this.ID.Visible = true;
-            this.ID.VisibleIndex = 0;
+            this.Id.Caption = "ID";
+            this.Id.FieldName = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = true;
+            this.Id.VisibleIndex = 0;
             // 
             // Ten
             // 
@@ -348,7 +348,7 @@
         private DevExpress.XtraGrid.GridControl dgvLoaiPhong;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.GridSplitContainer gridSplitContainer1;
-        private DevExpress.XtraGrid.Columns.GridColumn ID;
+        private DevExpress.XtraGrid.Columns.GridColumn Id;
         private DevExpress.XtraGrid.Columns.GridColumn Ten;
         private DevExpress.XtraGrid.Columns.GridColumn Gia;
         private DevExpress.XtraGrid.Columns.GridColumn TienPhuThu;

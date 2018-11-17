@@ -24,17 +24,19 @@ namespace DAO
 
         public bool KiemTraPass(UserDTO user)
         {
-            string query = "Select * From Users Where IDNhanVien = '" + user.IdNhanVien + "' and Pass = '" + user.Pass + "'";
-            DataTable dtb = DataProvider.Instance.getDS(query);
-            return (dtb.Rows.Count > 0);
+            //string query = "Select * From Users Where IDNhanVien = '" + user.IdNhanVien + "' and Pass = '" + user.Pass + "'";
+            //DataTable dtb = DataProvider.Instance.getDS(query);
+            //return (dtb.Rows.Count > 0);
+            return true;
         }
 
         public bool DoiMatKhau(UserDTO user)
         {
-            string[] param = { "@IDNhanVien", "@Pass"};
-            object[] values = { user.IdNhanVien, user.Pass };
-            string query = "Update Users Set Pass=@Pass Where IDNhanVien=@IDNhanVien";
-            return DataProvider.Instance.ExecuteNonQueryPara(query, param, values);
+            //string[] param = { "@IDNhanVien", "@Pass"};
+            //object[] values = { user.IdNhanVien, user.Pass };
+            //string query = "Update Users Set Pass=@Pass Where IDNhanVien=@IDNhanVien";
+            //return DataProvider.Instance.ExecuteNonQueryPara(query, param, values);
+            return true;
         }
     }
 }

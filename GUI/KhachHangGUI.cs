@@ -48,14 +48,14 @@ namespace GUI
             BindingSource source = new BindingSource();
             source.DataSource = KhachHangBUS.Instance.DSKhachHang();
             source.DataSource = dgvKhachHang.DataSource;
-            txtID.DataBindings.Add("Text", source, "ID", true, DataSourceUpdateMode.OnPropertyChanged);
+            txtID.DataBindings.Add("Text", source, "Id", true, DataSourceUpdateMode.OnPropertyChanged);
             txtTenKhachHang.DataBindings.Add("Text", source, "Ten", true, DataSourceUpdateMode.OnPropertyChanged);
-            cboNgaySinh.DataBindings.Add(nameof(DateEdit.DateTime), source, "NgaySinh", true, DataSourceUpdateMode.OnPropertyChanged);
             cboGioiTinh.DataBindings.Add("Text", source, "GioiTinh", true, DataSourceUpdateMode.OnPropertyChanged);
             txtQuocTich.DataBindings.Add("Text", source, "QuocTich", true, DataSourceUpdateMode.OnPropertyChanged);
-            txtSDT.DataBindings.Add("Text", source, "SDT", true, DataSourceUpdateMode.OnPropertyChanged);
-            txtCMND.DataBindings.Add("Text", source, "CMND", true, DataSourceUpdateMode.OnPropertyChanged);
+            txtSDT.DataBindings.Add("Text", source, "Sdt", true, DataSourceUpdateMode.OnPropertyChanged);
+            txtCMND.DataBindings.Add("Text", source, "Cmnd", true, DataSourceUpdateMode.OnPropertyChanged);
             txtEmail.DataBindings.Add("Text", source, "Email", true, DataSourceUpdateMode.OnPropertyChanged);
+            cboNgaySinh.DataBindings.Add(nameof(DateEdit.DateTime), source, "NgaySinh", true, DataSourceUpdateMode.OnPropertyChanged);
             dgvKhachHang.DataSource = source;
         }
 

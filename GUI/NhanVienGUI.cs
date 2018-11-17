@@ -24,7 +24,7 @@ namespace GUI
         private void NhanVienGUI_Load(object sender, EventArgs e)
         {
             LoadNhanVien();
-            LoadChucDanh();
+            //LoadChucDanh();
             LoadGioiTinh();
         }
         void LoadNhanVien()
@@ -55,14 +55,14 @@ namespace GUI
             BindingSource source = new BindingSource();
             source.DataSource = NhanVienBUS.Instance.DSNhanVien();
             source.DataSource = dgvNhanVien.DataSource;
-            txtID.DataBindings.Add("Text", source, "ID", true, DataSourceUpdateMode.OnPropertyChanged);
+            txtID.DataBindings.Add("Text", source, "Id", true, DataSourceUpdateMode.OnPropertyChanged);
             txtTenNhanVien.DataBindings.Add("Text", source, "Ten", true, DataSourceUpdateMode.OnPropertyChanged);
-            cboChucDanh.DataBindings.Add("Text", source, "ChucDanh", true, DataSourceUpdateMode.OnPropertyChanged);
+            //cboChucDanh.DataBindings.Add("Text", source, "ChucDanh", true, DataSourceUpdateMode.OnPropertyChanged);
             cboNgaySinh.DataBindings.Add(nameof(DateEdit.DateTime), source, "NgaySinh", true, DataSourceUpdateMode.OnPropertyChanged);
             cboGioiTinh.DataBindings.Add("Text", source, "GioiTinh", true, DataSourceUpdateMode.OnPropertyChanged);
             txtDiaChi.DataBindings.Add("Text", source, "DiaChi", true, DataSourceUpdateMode.OnPropertyChanged);
-            txtSDT.DataBindings.Add("Text", source, "SDT", true, DataSourceUpdateMode.OnPropertyChanged);
-            txtCMND.DataBindings.Add("Text", source, "CMND", true, DataSourceUpdateMode.OnPropertyChanged);
+            txtSDT.DataBindings.Add("Text", source, "Sdt", true, DataSourceUpdateMode.OnPropertyChanged);
+            txtCMND.DataBindings.Add("Text", source, "Cmnd", true, DataSourceUpdateMode.OnPropertyChanged);
             txtEmail.DataBindings.Add("Text", source, "Email", true, DataSourceUpdateMode.OnPropertyChanged);
             dgvNhanVien.DataSource = source;
         }

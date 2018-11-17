@@ -56,13 +56,13 @@
             this.gridSplitContainer1 = new DevExpress.XtraGrid.GridSplitContainer();
             this.dgvNhanVien = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Ten = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ChucDanh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NgaySinh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GioiTinh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.SDT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CMND = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Sdt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Cmnd = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Email = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grpChucNang)).BeginInit();
@@ -167,7 +167,7 @@
             this.cboChucDanh.Name = "cboChucDanh";
             this.cboChucDanh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cboChucDanh.Size = new System.Drawing.Size(362, 42);
+            this.cboChucDanh.Size = new System.Drawing.Size(362, 50);
             this.cboChucDanh.TabIndex = 3;
             this.cboChucDanh.Click += new System.EventHandler(this.txt_Click);
             // 
@@ -177,7 +177,7 @@
             this.cboGioiTinh.Name = "cboGioiTinh";
             this.cboGioiTinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cboGioiTinh.Size = new System.Drawing.Size(362, 42);
+            this.cboGioiTinh.Size = new System.Drawing.Size(362, 50);
             this.cboGioiTinh.TabIndex = 7;
             this.cboGioiTinh.Click += new System.EventHandler(this.txt_Click);
             // 
@@ -190,7 +190,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cboNgaySinh.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cboNgaySinh.Size = new System.Drawing.Size(362, 42);
+            this.cboNgaySinh.Size = new System.Drawing.Size(362, 50);
             this.cboNgaySinh.TabIndex = 5;
             this.cboNgaySinh.Click += new System.EventHandler(this.txt_Click);
             // 
@@ -214,7 +214,7 @@
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(954, 272);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(531, 42);
+            this.txtDiaChi.Size = new System.Drawing.Size(531, 50);
             this.txtDiaChi.TabIndex = 8;
             this.txtDiaChi.Click += new System.EventHandler(this.txt_Click);
             // 
@@ -254,7 +254,7 @@
             // 
             this.txtCMND.Location = new System.Drawing.Point(954, 138);
             this.txtCMND.Name = "txtCMND";
-            this.txtCMND.Size = new System.Drawing.Size(531, 42);
+            this.txtCMND.Size = new System.Drawing.Size(531, 50);
             this.txtCMND.TabIndex = 4;
             this.txtCMND.Click += new System.EventHandler(this.txt_Click);
             // 
@@ -262,7 +262,7 @@
             // 
             this.txtTenNhanVien.Location = new System.Drawing.Point(954, 70);
             this.txtTenNhanVien.Name = "txtTenNhanVien";
-            this.txtTenNhanVien.Size = new System.Drawing.Size(531, 42);
+            this.txtTenNhanVien.Size = new System.Drawing.Size(531, 50);
             this.txtTenNhanVien.TabIndex = 2;
             this.txtTenNhanVien.Click += new System.EventHandler(this.txt_Click);
             // 
@@ -278,7 +278,7 @@
             // 
             this.txtSDT.Location = new System.Drawing.Point(954, 210);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(531, 42);
+            this.txtSDT.Size = new System.Drawing.Size(531, 50);
             this.txtSDT.TabIndex = 6;
             this.txtSDT.Click += new System.EventHandler(this.txt_Click);
             // 
@@ -302,7 +302,7 @@
             // 
             this.txtEmail.Location = new System.Drawing.Point(251, 337);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(1234, 42);
+            this.txtEmail.Size = new System.Drawing.Size(1234, 50);
             this.txtEmail.TabIndex = 9;
             this.txtEmail.Click += new System.EventHandler(this.txt_Click);
             // 
@@ -310,7 +310,7 @@
             // 
             this.txtID.Location = new System.Drawing.Point(251, 70);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(362, 42);
+            this.txtID.Size = new System.Drawing.Size(362, 50);
             this.txtID.TabIndex = 1;
             // 
             // grpDanhSach
@@ -326,10 +326,10 @@
             // 
             this.gridSplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridSplitContainer1.Grid = this.dgvNhanVien;
-            this.gridSplitContainer1.Location = new System.Drawing.Point(4, 52);
+            this.gridSplitContainer1.Location = new System.Drawing.Point(3, 48);
             this.gridSplitContainer1.Name = "gridSplitContainer1";
             this.gridSplitContainer1.Panel1.Controls.Add(this.dgvNhanVien);
-            this.gridSplitContainer1.Size = new System.Drawing.Size(2196, 640);
+            this.gridSplitContainer1.Size = new System.Drawing.Size(2198, 645);
             this.gridSplitContainer1.TabIndex = 0;
             // 
             // dgvNhanVien
@@ -338,7 +338,7 @@
             this.dgvNhanVien.Location = new System.Drawing.Point(0, 0);
             this.dgvNhanVien.MainView = this.gridView1;
             this.dgvNhanVien.Name = "dgvNhanVien";
-            this.dgvNhanVien.Size = new System.Drawing.Size(2196, 640);
+            this.dgvNhanVien.Size = new System.Drawing.Size(2198, 645);
             this.dgvNhanVien.TabIndex = 0;
             this.dgvNhanVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -346,27 +346,27 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.ID,
+            this.Id,
             this.Ten,
             this.ChucDanh,
             this.NgaySinh,
             this.GioiTinh,
-            this.SDT,
-            this.CMND,
+            this.Sdt,
+            this.Cmnd,
             this.DiaChi,
             this.Email});
             this.gridView1.GridControl = this.dgvNhanVien;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             // 
-            // ID
+            // Id
             // 
-            this.ID.Caption = "ID";
-            this.ID.FieldName = "ID";
-            this.ID.Name = "ID";
-            this.ID.Visible = true;
-            this.ID.VisibleIndex = 0;
-            this.ID.Width = 105;
+            this.Id.Caption = "ID";
+            this.Id.FieldName = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = true;
+            this.Id.VisibleIndex = 0;
+            this.Id.Width = 105;
             // 
             // Ten
             // 
@@ -404,23 +404,23 @@
             this.GioiTinh.VisibleIndex = 4;
             this.GioiTinh.Width = 150;
             // 
-            // SDT
+            // Sdt
             // 
-            this.SDT.Caption = "Số điện thoại";
-            this.SDT.FieldName = "SDT";
-            this.SDT.Name = "SDT";
-            this.SDT.Visible = true;
-            this.SDT.VisibleIndex = 5;
-            this.SDT.Width = 211;
+            this.Sdt.Caption = "Số điện thoại";
+            this.Sdt.FieldName = "Sdt";
+            this.Sdt.Name = "Sdt";
+            this.Sdt.Visible = true;
+            this.Sdt.VisibleIndex = 5;
+            this.Sdt.Width = 211;
             // 
-            // CMND
+            // Cmnd
             // 
-            this.CMND.Caption = "CMND";
-            this.CMND.FieldName = "CMND";
-            this.CMND.Name = "CMND";
-            this.CMND.Visible = true;
-            this.CMND.VisibleIndex = 6;
-            this.CMND.Width = 231;
+            this.Cmnd.Caption = "CMND";
+            this.Cmnd.FieldName = "Cmnd";
+            this.Cmnd.Name = "Cmnd";
+            this.Cmnd.Visible = true;
+            this.Cmnd.VisibleIndex = 6;
+            this.Cmnd.Width = 231;
             // 
             // DiaChi
             // 
@@ -500,10 +500,10 @@
         private DevExpress.XtraGrid.GridSplitContainer gridSplitContainer1;
         private DevExpress.XtraGrid.GridControl dgvNhanVien;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn ID;
+        private DevExpress.XtraGrid.Columns.GridColumn Id;
         private DevExpress.XtraGrid.Columns.GridColumn Ten;
         private DevExpress.XtraGrid.Columns.GridColumn NgaySinh;
-        private DevExpress.XtraGrid.Columns.GridColumn SDT;
+        private DevExpress.XtraGrid.Columns.GridColumn Sdt;
         private DevExpress.XtraEditors.ComboBoxEdit cboChucDanh;
         private DevExpress.XtraEditors.ComboBoxEdit cboGioiTinh;
         private DevExpress.XtraEditors.DateEdit cboNgaySinh;
@@ -511,7 +511,7 @@
         private DevExpress.XtraEditors.TextEdit txtCMND;
         private DevExpress.XtraGrid.Columns.GridColumn ChucDanh;
         private DevExpress.XtraGrid.Columns.GridColumn GioiTinh;
-        private DevExpress.XtraGrid.Columns.GridColumn CMND;
+        private DevExpress.XtraGrid.Columns.GridColumn Cmnd;
         private DevExpress.XtraGrid.Columns.GridColumn DiaChi;
         private DevExpress.XtraGrid.Columns.GridColumn Email;
     }

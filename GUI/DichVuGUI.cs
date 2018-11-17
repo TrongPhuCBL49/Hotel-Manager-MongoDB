@@ -40,7 +40,7 @@ namespace GUI
             BindingSource source = new BindingSource();
             source.DataSource = DichVuBUS.Instance.DSDichVu();
             source.DataSource = dgvDichVu.DataSource;
-            txtID.DataBindings.Add("Text", source, "ID", true, DataSourceUpdateMode.OnPropertyChanged);
+            txtID.DataBindings.Add("Text", source, "Id", true, DataSourceUpdateMode.OnPropertyChanged);
             txtTenDichVu.DataBindings.Add("Text", source, "Ten", true, DataSourceUpdateMode.OnPropertyChanged);
             txtGia.DataBindings.Add("Text", source, "Gia", true, DataSourceUpdateMode.OnPropertyChanged);
             dgvDichVu.DataSource = source;
