@@ -23,7 +23,17 @@ db.system.js.save({
 	_id: "doiMatKhau",
 	value: function(idNhanVien, password) 
 	{
-	  var kq = db.Users.findOne({$and: [{IdNhanVien: idNhanVien}, {Password: password}]});
+    	try 
+    	{
+      		db.Users.updateOne(
+      			{ IdNhanVien:idNhanVien }, 
+      			{ $set:{Password:password}}
+      		);
+      		return 1;
+    	} 
+    	catch (e){
+      	return 0;
+      	}
 	}
 });
 
@@ -419,13 +429,13 @@ db.system.js.save({
 
 db.system.js.save({
   	_id: "suaUser",
-	value: function(id, passWord, chucDanh) 
+	value: function(id, password, chucDanh) 
 	{
 	  try
 	  {					
 	  	db.Users.updateOne(
 	  		{IdNhanVien: id},
-	  		{$set: {Password:passWord, ChucDanh:chucDanh}}
+	  		{$set: {Password:password, ChucDanh:chucDanh}}
 	  	);
 	  	return 1;
 	  }
@@ -437,12 +447,6 @@ db.system.js.save({
 
 db.loadServerScripts()
 
+doiMatKhau("NV2", "111")
 
-db.DichVu.find()
-suaDichVu("Chanh Đá","5500","6")
-themChucDanh("Bảo Vệ","4");
-themDichVu("Nước Chanh","5000","6");
-themKhachHang("KH3","Nguyễn Trọng Phú",ISODate("1998-05-22"),"Nam","0873712812","291167736","Việt Nam","ntp@gmail.com")
-themLoaiPhong("4","Phòng Đôi Vip","100000","2","60000")
-themNhanVien("NV4","Nguyễn Thành Đồng",ISODate("1998-11-27T00:00:00.000+0000"),"Nam","Suối Tiên","0973712812","261167756","dattran@gmail.com")
-xoaChucDanh("4")
+db.Users.find()

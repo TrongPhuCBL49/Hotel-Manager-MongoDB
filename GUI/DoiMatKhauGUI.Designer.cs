@@ -48,14 +48,16 @@
             // 
             this.txtPassMoi.Location = new System.Drawing.Point(460, 262);
             this.txtPassMoi.Name = "txtPassMoi";
-            this.txtPassMoi.Size = new System.Drawing.Size(368, 42);
+            this.txtPassMoi.Properties.PasswordChar = '9';
+            this.txtPassMoi.Size = new System.Drawing.Size(368, 50);
             this.txtPassMoi.TabIndex = 2;
             // 
             // txtPassCu
             // 
             this.txtPassCu.Location = new System.Drawing.Point(460, 170);
             this.txtPassCu.Name = "txtPassCu";
-            this.txtPassCu.Size = new System.Drawing.Size(368, 42);
+            this.txtPassCu.Properties.PasswordChar = '9';
+            this.txtPassCu.Size = new System.Drawing.Size(368, 50);
             this.txtPassCu.TabIndex = 1;
             // 
             // labelControl2
@@ -86,7 +88,8 @@
             // 
             this.txtXacNhanPass.Location = new System.Drawing.Point(460, 354);
             this.txtXacNhanPass.Name = "txtXacNhanPass";
-            this.txtXacNhanPass.Size = new System.Drawing.Size(368, 42);
+            this.txtXacNhanPass.Properties.PasswordChar = '9';
+            this.txtXacNhanPass.Size = new System.Drawing.Size(368, 50);
             this.txtXacNhanPass.TabIndex = 3;
             // 
             // panelControl2

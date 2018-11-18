@@ -16,8 +16,8 @@ namespace DAO
         const string strCon = "mongodb://localhost:27017";
         const string nameDtb = "HotelManager";
 
-        MongoClient client;
-        IMongoDatabase database;
+        private MongoClient client;
+        private IMongoDatabase database;
 
         private static DataProvider instance;
         public static DataProvider Instance
@@ -29,6 +29,9 @@ namespace DAO
                 return instance;
             } 
         }
+
+        public IMongoDatabase Database { get => database; set => database = value; }
+        public MongoClient Client { get => client; set => client = value; }
 
         private DataProvider()
         {

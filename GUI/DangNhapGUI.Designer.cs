@@ -91,7 +91,7 @@
             this.txtMatKhau.Location = new System.Drawing.Point(289, 177);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Properties.PasswordChar = '9';
-            this.txtMatKhau.Size = new System.Drawing.Size(368, 42);
+            this.txtMatKhau.Size = new System.Drawing.Size(368, 50);
             this.txtMatKhau.TabIndex = 2;
             // 
             // txtMaNhanVien
@@ -99,7 +99,7 @@
             this.txtMaNhanVien.EditValue = "";
             this.txtMaNhanVien.Location = new System.Drawing.Point(289, 85);
             this.txtMaNhanVien.Name = "txtMaNhanVien";
-            this.txtMaNhanVien.Size = new System.Drawing.Size(368, 42);
+            this.txtMaNhanVien.Size = new System.Drawing.Size(368, 50);
             this.txtMaNhanVien.TabIndex = 1;
             // 
             // labelControl2

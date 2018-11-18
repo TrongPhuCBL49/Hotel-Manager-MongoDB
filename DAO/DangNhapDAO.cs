@@ -27,8 +27,6 @@ namespace DAO
 
         public bool KiemTraUser(UserDTO userDTO)
         {
-            MongoClient client = new MongoClient("mongodb://localhost:27017");
-            IMongoDatabase database = client.GetDatabase("HotelManager");
             //IMongoCollection<BsonDocument> collection = database.GetCollection<BsonDocument>("Users");
             //var el = BsonDocument.Parse("{$and:[{\"IdNhanVien\":\"" + userDTO.IdNhanVien + "\"}, {\"Password\":\"" + userDTO.Pass + "\"}]}");
             //var doc = new QueryDocument(el);
@@ -36,7 +34,7 @@ namespace DAO
             //return (result > 0);
 
             var cmd = new JsonCommand<BsonDocument>("{ eval: \"kiemTraUser('" + userDTO.IdNhanVien + "','" + userDTO.Pass + "')\" }");
-            var result = database.RunCommand(cmd);
+            var result = DataProvider.Instance.Database.RunCommand(cmd);
             return result["retval"].ToBoolean();
 
 
