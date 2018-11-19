@@ -70,7 +70,6 @@ namespace DAO
         }
         public bool XoaPhong(PhongDTO phong)
         {
-            phong.LoaiPhong = getIdLoaiPhong(phong.Ten);
             var cmd = new JsonCommand<BsonDocument>
                 ("{ eval: \"xoaPhong('" + phong.Id + "')\" }");
             var result = DataProvider.Instance.Database.RunCommand(cmd);

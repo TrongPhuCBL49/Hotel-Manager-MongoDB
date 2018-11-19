@@ -134,7 +134,7 @@ db.LoaiPhong.find()
 findLoaiPhong("101")
 insertDichVu(4, "Giặt ủi", 20000)
 
-db.Phong.find()
+db.DichVu.find()
 
 db.eval()
 

@@ -49,7 +49,7 @@ db.system.js.save({
 
 db.system.js.save({
   	_id: "themChucDanh",
-	value: function(tenChucDanh, id) 
+	value: function(id, tenChucDanh) 
 	{
 	  try
 	  {
@@ -67,7 +67,7 @@ db.system.js.save({
 
 db.system.js.save({
   	_id: "themDichVu",
-	value: function(tenDichVu, gia, id) 
+	value: function(id, tenDichVu, gia) 
 	{
 	  try
 	  {
@@ -459,11 +459,13 @@ db.system.js.save({
 db.loadServerScripts()
 
 db.LoaiPhong.find()
-db.Phong.find()
+db.Users.find()
 db.runCommand({ eval: "idLoaiPhong('Phòng đơn thường')"})
 idLoaiPhong('Phòng đơn thường')
 xoaLoaiPhong("3")
 
 var a = '5be9f4a2f3a066a50e16f9ba';
-suaPhong("DV201", "201", ObjectId(a), "Chưa đặt")
+suaDichVu("2", "Sting", ObjectId(a), "Chưa đặt")
 print(a);
+
+xoaDichVu("1")

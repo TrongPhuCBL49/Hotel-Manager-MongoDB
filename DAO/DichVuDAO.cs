@@ -26,6 +26,8 @@ namespace DAO
 
         private DichVuDAO() { }
 
+        private List<int> ids = new List<int>();
+
         public DataTable DSDichVu()
         {
             List<BsonDocument> documents = DataProvider.Instance.getDocuments("DichVu");
@@ -38,35 +40,37 @@ namespace DAO
                 string id = document["Id"].AsString;
                 string ten = document["Ten"].AsString;
                 string gia = document["Gia"].AsString;
-
                 dtb.Rows.Add(id, ten, gia);
+                ids.Add(int.Parse(id));
             }
             return dtb;
         }
 
         public bool ThemDichVu(DichVuDTO dichVu)
         {
-            //string[] param = { "@Ten", "@Gia" };
-            //object[] values = { dichVu.Ten, dichVu.Gia };
-            //string query = "Insert Into DichVu Values(@Ten,@Gia)";
-            //return DataProvider.Instance.ExecuteNonQueryPara(query, param, values);
-            return true;
+            dichVu.Id = DataProvider.Instance.findMin(ids).ToString();
+            var cmd = new JsonCommand<BsonDocument>
+                ("{ eval: \"themDichVu('" + dichVu.Id + "','"
+                                          + dichVu.Ten + "','"
+                                          + dichVu.Gia + "')\" }");
+            var result = DataProvider.Instance.Database.RunCommand(cmd);
+            return result["retval"].ToBoolean();
         }
         public bool SuaDichVu(DichVuDTO dichVu)
         {
-            //string[] param = { "@ID", "@Ten", "@Gia" };
-            //object[] values = { dichVu.Id, dichVu.Ten, dichVu.Gia };
-            //string query = "Update DichVu Set Ten=@Ten, Gia=@Gia Where ID=@ID";
-            //return DataProvider.Instance.ExecuteNonQueryPara(query, param, values);
-            return true;
+            var cmd = new JsonCommand<BsonDocument>
+                ("{ eval: \"suaDichVu('" + dichVu.Id + "','"
+                                         + dichVu.Ten + "','"
+                                         + dichVu.Gia + "')\" }");
+            var result = DataProvider.Instance.Database.RunCommand(cmd);
+            return result["retval"].ToBoolean();
         }
         public bool XoaDichVu(DichVuDTO dichVu)
         {
-            //string[] param = { "@ID" };
-            //object[] values = { dichVu.Id };
-            //string query = "Delete DichVu Where ID=@ID";
-            //return DataProvider.Instance.ExecuteNonQueryPara(query, param, values);
-            return true;
+            var cmd = new JsonCommand<BsonDocument>
+                ("{ eval: \"xoaDichVu('" + dichVu.Id + "')\" }");
+            var result = DataProvider.Instance.Database.RunCommand(cmd);
+            return result["retval"].ToBoolean();
         }
     }
 }

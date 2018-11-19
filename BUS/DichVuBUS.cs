@@ -36,7 +36,6 @@ namespace BUS
             try
             {
                 dichVu.Ten = TenDichVu;
-                //dichVu.Gia = int.Parse(Gia);
                 dichVu.Gia = Gia;
             }
             catch (Exception)
@@ -50,10 +49,8 @@ namespace BUS
             DichVuDTO dichVu = new DichVuDTO();
             try
             {
-                //dichVu.Id = int.Parse(Id);
                 dichVu.Id = Id;
                 dichVu.Ten = TenDichVu;
-                //dichVu.Gia = int.Parse(Gia);
                 dichVu.Gia = Gia;
             }
             catch (Exception)
@@ -65,7 +62,6 @@ namespace BUS
         public bool XoaDichVu(string Id)
         {
             DichVuDTO dichVu = new DichVuDTO();
-            //dichVu.Id = int.Parse(Id);
             dichVu.Id = Id;
             return DichVuDAO.Instance.XoaDichVu(dichVu);
         }
