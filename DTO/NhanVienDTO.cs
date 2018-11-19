@@ -16,7 +16,6 @@ namespace DTO
         private string _sdt;
         private string _cmnd;
         private string _email;
-        private int _idChucDanh;
         public string Id { get => _id; set => _id = value; }
         public string Ten { get => _ten; set => _ten = value; }
         public DateTime NgaySinh { get => _ngaySinh; set => _ngaySinh = value; }
@@ -25,6 +24,5 @@ namespace DTO
         public string Sdt { get => _sdt; set => _sdt = value; }
         public string Cmnd { get => _cmnd; set => _cmnd = value; }
         public string Email { get => _email; set => _email = value; }
-        public int IdChucDanh { get => _idChucDanh; set => _idChucDanh = value; }
     }
 }

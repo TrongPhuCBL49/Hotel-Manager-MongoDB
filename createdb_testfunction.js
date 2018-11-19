@@ -134,8 +134,10 @@ db.LoaiPhong.find()
 findLoaiPhong("101")
 insertDichVu(4, "Giặt ủi", 20000)
 
-db.DichVu.find()
+db.NhanVien.find()
 
 db.eval()
 
 db.Users.find({$and: [{"IdNhanVien": "NV1"}, {"Password": "123"}]}).count()
+
+xoaNhanVien("NV4")

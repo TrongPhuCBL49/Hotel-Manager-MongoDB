@@ -36,12 +36,12 @@ namespace GUI
             btnHuyBo.Enabled = false;
             btnLuu.Enabled = false;
         }
-        void LoadChucDanh()
-        {
-            DataTable dtbChucDanh = ChucDanhBUS.Instance.DSChucDanh();
-            foreach (DataRow row in dtbChucDanh.Rows)
-                cboChucDanh.Properties.Items.Add(row["Ten"]);
-        }
+        //void LoadChucDanh()
+        //{
+        //    DataTable dtbChucDanh = ChucDanhBUS.Instance.DSChucDanh();
+        //    foreach (DataRow row in dtbChucDanh.Rows)
+        //        cboChucDanh.Properties.Items.Add(row["Ten"]);
+        //}
         void LoadGioiTinh()
         {
             List<string> TrangThai = new List<string>();
@@ -82,7 +82,7 @@ namespace GUI
         {
             txtID.DataBindings.Clear();
             txtTenNhanVien.DataBindings.Clear();
-            cboChucDanh.DataBindings.Clear();
+            //cboChucDanh.DataBindings.Clear();
             cboNgaySinh.DataBindings.Clear();
             cboGioiTinh.DataBindings.Clear();
             txtDiaChi.DataBindings.Clear();
@@ -109,14 +109,14 @@ namespace GUI
         {
             if (isThem)
             {
-                if (NhanVienBUS.Instance.ThemNhanVien(txtID.Text, txtTenNhanVien.Text, cboChucDanh.Text, cboNgaySinh.DateTime, cboGioiTinh.Text, txtDiaChi.Text, txtSDT.Text, txtCMND.Text, txtEmail.Text))
+                if (NhanVienBUS.Instance.ThemNhanVien(txtID.Text, txtTenNhanVien.Text, cboNgaySinh.DateTime, cboGioiTinh.Text, txtDiaChi.Text, txtSDT.Text, txtCMND.Text, txtEmail.Text))
                     MessageBox.Show("Thêm nhân viên thành công!");
                 else
                     MessageBox.Show("Có lỗi xảy ra. Thêm nhân viên thất bại!");
             }
             else
             {
-                if (NhanVienBUS.Instance.SuaNhanVien(txtID.Text, txtTenNhanVien.Text, cboChucDanh.Text, cboNgaySinh.DateTime, cboGioiTinh.Text, txtDiaChi.Text, txtSDT.Text, txtCMND.Text, txtEmail.Text))
+                if (NhanVienBUS.Instance.SuaNhanVien(txtID.Text, txtTenNhanVien.Text, cboNgaySinh.DateTime, cboGioiTinh.Text, txtDiaChi.Text, txtSDT.Text, txtCMND.Text, txtEmail.Text))
                     MessageBox.Show("Chỉnh sửa nhân viên thành công!");
                 else
                     MessageBox.Show("Có lỗi xảy ra. Chỉnh sửa nhân viên thất bại!");

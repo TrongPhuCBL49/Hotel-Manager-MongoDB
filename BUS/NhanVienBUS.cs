@@ -30,14 +30,13 @@ namespace BUS
             return NhanVienDAO.Instance.DSNhanVien();
         }
 
-        public bool ThemNhanVien(string Id, string TenNhanVien, string ChucDanh, DateTime NgaySinh, string GioiTinh, string DiaChi, string SDT, string CMND, string Email)
+        public bool ThemNhanVien(string Id, string TenNhanVien, DateTime NgaySinh, string GioiTinh, string DiaChi, string SDT, string CMND, string Email)
         {
             NhanVienDTO NhanVien = new NhanVienDTO();
             try
             {
                 NhanVien.Id = Id;
                 NhanVien.Ten = TenNhanVien;
-                NhanVien.IdChucDanh = NhanVienDAO.Instance.IdChucDanh(ChucDanh);
                 NhanVien.NgaySinh = NgaySinh;
                 NhanVien.GioiTinh = GioiTinh;
                 NhanVien.DiaChi = DiaChi;
@@ -51,14 +50,13 @@ namespace BUS
             }
             return NhanVienDAO.Instance.ThemNhanVien(NhanVien);
         }
-        public bool SuaNhanVien(string Id, string TenNhanVien, string ChucDanh, DateTime NgaySinh, string GioiTinh, string DiaChi, string SDT, string CMND, string Email)
+        public bool SuaNhanVien(string Id, string TenNhanVien, DateTime NgaySinh, string GioiTinh, string DiaChi, string SDT, string CMND, string Email)
         {
             NhanVienDTO NhanVien = new NhanVienDTO();
             try
             {
                 NhanVien.Id = Id;
                 NhanVien.Ten = TenNhanVien;
-                NhanVien.IdChucDanh = NhanVienDAO.Instance.IdChucDanh(ChucDanh);
                 NhanVien.NgaySinh = NgaySinh;
                 NhanVien.GioiTinh = GioiTinh;
                 NhanVien.DiaChi = DiaChi;
