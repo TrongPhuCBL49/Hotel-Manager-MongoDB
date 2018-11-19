@@ -8,16 +8,16 @@ namespace DTO
 {
     public class LoaiPhongDTO
     {
-        private int _id;
+        private string _id;
         private string _ten;
-        private int _gia;
-        private int _tienPhuThu;
-        private int _soGiuong;
+        private string _gia;
+        private string _tienPhuThu;
+        private string _soGiuong;
 
-        public int Id { get => _id; set => _id = value; }
+        public string Id { get => _id; set => _id = value; }
         public string Ten { get => _ten; set => _ten = value; }
-        public int Gia { get => _gia; set => _gia = value; }
-        public int TienPhuThu { get => _tienPhuThu; set => _tienPhuThu = value; }
-        public int SoGiuong { get => _soGiuong; set => _soGiuong = value; }
+        public string Gia { get => _gia; set => _gia = value; }
+        public string TienPhuThu { get => _tienPhuThu; set => _tienPhuThu = value; }
+        public string SoGiuong { get => _soGiuong; set => _soGiuong = value; }
     }
 }

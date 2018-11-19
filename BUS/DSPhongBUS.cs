@@ -33,8 +33,8 @@ namespace BUS
                 PhongDTO phong = new PhongDTO();
                 phong.Id = item["ID"].ToString();
                 phong.Ten = item["Ten"].ToString();
-                phong.IdLoai = (int)item["IDLoai"];
-                phong.IdTrangThai = (int)item["IDTrangThai"];
+                phong.LoaiPhong = item["IDLoai"].ToString();
+                phong.TrangThai = item["IDTrangThai"].ToString();
                 dsPhong.Add(phong);
             }
             return dsPhong;

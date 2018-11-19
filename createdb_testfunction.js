@@ -30,9 +30,9 @@ var idPhong = db.LoaiPhong.findOne({Id: 2})
 
 db.Phong.insert(
 	{
-	  Id: "DV201",
-	  Ten: "201",
-	  LoaiPhong: idPhong._id,
+	  Id: "DT202",
+	  Ten: "202",
+	  LoaiPhong: ObjectId("5be9f4a2f3a066a50e16f9ba"),
 	  TrangThai: "Chưa đặt"
 	}
 )

@@ -29,7 +29,7 @@ namespace GUI
                 SimpleButton btn = new SimpleButton() { Width = 100, Height = 100 };
                 btn.Name = "btn" + phong.Ten;
                 btn.Text = phong.Ten;
-                if (phong.IdTrangThai == 3)
+                if (phong.TrangThai == "Chưa đặt")
                     btn.ImageOptions.Image = Image.FromFile("../../Resources/house (2).png");
                 else
                     btn.ImageOptions.Image = Image.FromFile("../../Resources/home.png");

@@ -87,6 +87,32 @@ namespace DAO
             //    dap.Fill(tbl);
             //    return tbl;
         }
+        public int findMin(List<int> input)
+        {
+            if (input.Count < 1) return 0;
+            if (input.Count == 1)
+            {
+                if (input[0] == 1) return 2;
+                else return 1;
+            }
+            int[] t = new int[input.Count];
+            for (int k = 0; k < input.Count; k++)
+            {
+                int i = input[k];
+                if (i > 0) t[i - 1] = 1;
+            }
+            int gotcha = 1;
+            for (int i = 0; i < t.Length; i++)
+            {
+                if (t[i] == 0)
+                {
+                    gotcha = i + 1;
+                    break;
+                }
+            }
+            return gotcha;
+        }
+
         //public object ExecuteScalar(string strSQL, CommandType ct)
         //{
         //    if (con.State == ConnectionState.Open)

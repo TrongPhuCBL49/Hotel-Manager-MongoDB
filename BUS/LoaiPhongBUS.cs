@@ -36,9 +36,9 @@ namespace BUS
             try
             {
                 loaiPhong.Ten = TenLoaiPhong;
-                loaiPhong.SoGiuong = int.Parse(SoGiuong);
-                loaiPhong.Gia = int.Parse(Gia);
-                loaiPhong.TienPhuThu = int.Parse(TienPhuThu);
+                loaiPhong.SoGiuong = SoGiuong;
+                loaiPhong.Gia = Gia;
+                loaiPhong.TienPhuThu = TienPhuThu;
             }
             catch (Exception)
             {
@@ -51,11 +51,11 @@ namespace BUS
             LoaiPhongDTO loaiPhong = new LoaiPhongDTO();
             try
             {
-                loaiPhong.Id = int.Parse(Id);
+                loaiPhong.Id = Id;
                 loaiPhong.Ten = TenLoaiPhong;
-                loaiPhong.SoGiuong = int.Parse(SoGiuong);
-                loaiPhong.Gia = int.Parse(Gia);
-                loaiPhong.TienPhuThu = int.Parse(TienPhuThu);
+                loaiPhong.SoGiuong = SoGiuong;
+                loaiPhong.Gia = Gia;
+                loaiPhong.TienPhuThu = TienPhuThu;
             }
             catch (Exception)
             {
@@ -66,7 +66,7 @@ namespace BUS
         public bool XoaLoaiPhong(string Id)
         {
             LoaiPhongDTO loaiPhong = new LoaiPhongDTO();
-            loaiPhong.Id = int.Parse(Id);
+            loaiPhong.Id = Id;
             return LoaiPhongDAO.Instance.XoaLoaiPhong(loaiPhong);
         }
 

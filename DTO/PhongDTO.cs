@@ -10,12 +10,12 @@ namespace DTO
     {
         private string _id;
         private string _ten;
-        private int _idLoai;
-        private int _idTrangThai;
+        private string _loaiPhong;
+        private string _trangThai;
 
         public string Id { get => _id; set => _id = value; }
         public string Ten { get => _ten; set => _ten = value; }
-        public int IdLoai { get => _idLoai; set => _idLoai = value; }
-        public int IdTrangThai { get => _idTrangThai; set => _idTrangThai = value; }
+        public string LoaiPhong { get => _loaiPhong; set => _loaiPhong = value; }
+        public string TrangThai { get => _trangThai; set => _trangThai = value; }
     }
 }

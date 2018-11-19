@@ -5,7 +5,17 @@ db.system.js.save({
   		var phong = db.Phong.findOne({Ten: tenPhong});
   		var idLoaiPhong = phong.LoaiPhong;
   		var tenLoaiPhong = db.LoaiPhong.findOne({ _id: idLoaiPhong});
-  		return tenLoaiPhong;
+  		return tenLoaiPhong.Ten;
+	}
+});
+
+db.system.js.save({
+    _id: "idLoaiPhong",
+    value: function(tenLoaiPhong)
+	{
+  		var loaiPhong = db.LoaiPhong.findOne({Ten: tenLoaiPhong});
+  		var result = loaiPhong._id;
+  		return result.toString();
 	}
 });
 
@@ -415,9 +425,10 @@ db.system.js.save({
 	{
 	  try
 	  {					
+	    var idLoaiPhong = loaiPhong;
 	  	db.Phong.updateOne(
 	  		{Id: id},
-	  		{$set: {Ten:tenPhong, LoaiPhong:loaiPhong, TrangThai:trangThai}}
+	  		{$set: {Ten:tenPhong, LoaiPhong:idLoaiPhong, TrangThai:trangThai}}
 	  	);
 	  	return 1;
 	  }
@@ -447,6 +458,12 @@ db.system.js.save({
 
 db.loadServerScripts()
 
-doiMatKhau("NV2", "111")
+db.LoaiPhong.find()
+db.Phong.find()
+db.runCommand({ eval: "idLoaiPhong('Phòng đơn thường')"})
+idLoaiPhong('Phòng đơn thường')
+xoaLoaiPhong("3")
 
-db.Users.find()
+var a = '5be9f4a2f3a066a50e16f9ba';
+suaPhong("DV201", "201", ObjectId(a), "Chưa đặt")
+print(a);

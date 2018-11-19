@@ -37,8 +37,8 @@ namespace BUS
             {
                 phong.Id = Id;
                 phong.Ten = TenPhong;
-                phong.IdLoai = PhongDAO.Instance.IdLoaiPhong(LoaiPhong);
-                phong.IdTrangThai = PhongDAO.Instance.IdTrangThai(TrangThai);
+                phong.LoaiPhong = LoaiPhong;
+                phong.TrangThai = TrangThai;
             }
             catch (Exception)
             {
@@ -53,8 +53,8 @@ namespace BUS
             {
                 phong.Id = Id;
                 phong.Ten = TenPhong;
-                phong.IdLoai = PhongDAO.Instance.IdLoaiPhong(LoaiPhong);
-                phong.IdTrangThai = PhongDAO.Instance.IdTrangThai(TrangThai);
+                phong.LoaiPhong = LoaiPhong;
+                phong.TrangThai = TrangThai;
             }
             catch (Exception)
             {

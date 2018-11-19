@@ -38,51 +38,56 @@ namespace DAO
             {
                 string id = document["Id"].AsString;
                 string ten = document["Ten"].AsString;
-                string loaiPhong = document["LoaiPhong"].AsString;
+                string loaiPhong = getLoaiPhong(ten);
                 string trangThai = document["TrangThai"].AsString;
-
                 dtb.Rows.Add(id, ten, loaiPhong, trangThai);
             }
             return dtb;
         }
-
         public bool ThemPhong(PhongDTO phong)
         {
-            //string[] param = { "@ID", "@Ten", "@IDLoai", "@IdTrangThai" };
-            //object[] values = { phong.Id, phong.Ten, phong.IdLoai, phong.IdTrangThai };
-            //string query = "Insert Into Phong Values(@ID,@Ten,@IDLoai,@IDTrangThai)";
-            //return DataProvider.Instance.ExecuteNonQueryPara(query, param, values);
-            return true;
+            string id = getIdLoaiPhong(phong.LoaiPhong);
+            phong.LoaiPhong = id.Remove(id.Length - 2).Remove(0, 10);
+            var cmd = new JsonCommand<BsonDocument>
+                ("{ eval: \"themPhong('" + phong.Id + "','"
+                                         + phong.Ten + "', ObjectId('"
+                                         + phong.LoaiPhong + "'),'"
+                                         + phong.TrangThai + "')\" }");
+            var result = DataProvider.Instance.Database.RunCommand(cmd);
+            return result["retval"].ToBoolean();
         }
         public bool SuaPhong(PhongDTO phong)
         {
-            //string[] param = { "@ID", "@Ten", "@IDLoai", "@IDTrangThai" };
-            //object[] values = { phong.Id, phong.Ten, phong.IdLoai, phong.IdTrangThai };
-            //string query = "Update Phong Set Ten=@Ten, IDLoai=@IDLoai, IDTrangThai=@IDTrangThai Where ID=@ID";
-            //return DataProvider.Instance.ExecuteNonQueryPara(query, param, values);
-            return true;
+            string id = getIdLoaiPhong(phong.LoaiPhong);
+            phong.LoaiPhong = id.Remove(id.Length - 2).Remove(0, 10); 
+            var cmd = new JsonCommand<BsonDocument>
+                ("{ eval: \"suaPhong('" + phong.Id + "','"
+                                        + phong.Ten + "', ObjectId('"
+                                        + phong.LoaiPhong + "'),'"
+                                        + phong.TrangThai + "')\" }");
+            var result = DataProvider.Instance.Database.RunCommand(cmd);
+            return result["retval"].ToBoolean();
         }
         public bool XoaPhong(PhongDTO phong)
         {
-            //string[] param = { "@ID" };
-            //object[] values = { phong.Id };
-            //string query = "Delete Phong Where ID=@ID";
-            //return DataProvider.Instance.ExecuteNonQueryPara(query, param, values);
-            return true;
+            phong.LoaiPhong = getIdLoaiPhong(phong.Ten);
+            var cmd = new JsonCommand<BsonDocument>
+                ("{ eval: \"xoaPhong('" + phong.Id + "')\" }");
+            var result = DataProvider.Instance.Database.RunCommand(cmd);
+            return result["retval"].ToBoolean();
         }
-        public int IdLoaiPhong(string loaiPhong)
+        public string getLoaiPhong(string tenPhong)
         {
-            //string query = "Select ID From LoaiPhong Where Ten = N'" + loaiPhong + "'";
-            //DataTable dtb = DataProvider.Instance.getDS(query);
-            //return int.Parse(dtb.Rows[0]["ID"].ToString());
-            return 1;
+            var cmd = new JsonCommand<BsonDocument>("{ eval: \"loaiPhong('" + tenPhong + "')\" }");
+            var result = DataProvider.Instance.Database.RunCommand(cmd);
+            return result["retval"].ToString();
         }
-        public int IdTrangThai(string trangThai)
+
+        public string getIdLoaiPhong(string tenLoaiPhong)
         {
-            //string query = "Select ID From TrangThai Where Ten = N'" + trangThai + "'";
-            //DataTable dtb = DataProvider.Instance.getDS(query);
-            //return int.Parse(dtb.Rows[0]["ID"].ToString());
-            return 1;
+            var cmd = new JsonCommand<BsonDocument>("{ eval: \"idLoaiPhong('" + tenLoaiPhong + "')\" }");
+            var result = DataProvider.Instance.Database.RunCommand(cmd);
+            return result["retval"].ToString();
         }
 
     }
