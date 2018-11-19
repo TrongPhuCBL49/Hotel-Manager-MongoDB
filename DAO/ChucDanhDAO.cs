@@ -26,6 +26,8 @@ namespace DAO
 
         private ChucDanhDAO() { }
 
+        private List<int> ids = new List<int>();
+
         public DataTable DSChucDanh()
         {
             List<BsonDocument> documents = DataProvider.Instance.getDocuments("ChucDanh");
@@ -36,35 +38,35 @@ namespace DAO
             {
                 string id = document["Id"].AsString;
                 string tenChucDanh = document["TenChucDanh"].AsString;
-
                 dtb.Rows.Add(id, tenChucDanh);
+                ids.Add(int.Parse(id));
             }
             return dtb;
         }
 
         public bool ThemChucDanh(ChucDanhDTO chucDanh)
         {
-            //string[] param = { "@Ten" };
-            //object[] values = { chucDanh.Ten };
-            //string query = "Insert Into ChucDanh Values(@Ten)";
-            //return DataProvider.Instance.ExecuteNonQueryPara(query, param, values);
-            return true;
+            chucDanh.Id = DataProvider.Instance.findMin(ids).ToString();
+            var cmd = new JsonCommand<BsonDocument>
+                ("{ eval: \"themChucDanh('" + chucDanh.Id + "','"
+                                            + chucDanh.Ten + "')\" }");
+            var result = DataProvider.Instance.Database.RunCommand(cmd);
+            return result["retval"].ToBoolean();
         }
         public bool SuaChucDanh(ChucDanhDTO chucDanh)
         {
-            //string[] param = { "@ID", "@Ten" };
-            //object[] values = { chucDanh.Id, chucDanh.Ten };
-            //string query = "Update ChucDanh Set Ten=@Ten Where ID=@ID";
-            //return DataProvider.Instance.ExecuteNonQueryPara(query, param, values);
-            return true;
+            var cmd = new JsonCommand<BsonDocument>
+                ("{ eval: \"suaChucDanh('" + chucDanh.Id + "','"
+                                           + chucDanh.Ten + "')\" }");
+            var result = DataProvider.Instance.Database.RunCommand(cmd);
+            return result["retval"].ToBoolean();
         }
         public bool XoaChucDanh(ChucDanhDTO chucDanh)
         {
-            //string[] param = { "@ID" };
-            //object[] values = { chucDanh.Id };
-            //string query = "Delete ChucDanh Where ID=@ID";
-            //return DataProvider.Instance.ExecuteNonQueryPara(query, param, values);
-            return true;
+            var cmd = new JsonCommand<BsonDocument>
+                ("{ eval: \"xoaChucDanh('" + chucDanh.Id + "')\" }");
+            var result = DataProvider.Instance.Database.RunCommand(cmd);
+            return result["retval"].ToBoolean();
         }
     }
 }

@@ -48,7 +48,7 @@ namespace BUS
             ChucDanhDTO ChucDanh = new ChucDanhDTO();
             try
             {
-                ChucDanh.Id = int.Parse(Id);
+                ChucDanh.Id = Id;
                 ChucDanh.Ten = TenChucDanh;
             }
             catch (Exception)
@@ -60,7 +60,7 @@ namespace BUS
         public bool XoaChucDanh(string Id)
         {
             ChucDanhDTO ChucDanh = new ChucDanhDTO();
-            ChucDanh.Id = int.Parse(Id);
+            ChucDanh.Id = Id;
             return ChucDanhDAO.Instance.XoaChucDanh(ChucDanh);
         }
 

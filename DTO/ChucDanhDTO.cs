@@ -8,10 +8,10 @@ namespace DTO
 {
     public class ChucDanhDTO
     {
-        private int _id;
+        private string _id;
         private string _ten;
 
-        public int Id { get => _id; set => _id = value; }
+        public string Id { get => _id; set => _id = value; }
         public string Ten { get => _ten; set => _ten = value; }
     }
 }
