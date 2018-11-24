@@ -468,4 +468,16 @@ var a = '5be9f4a2f3a066a50e16f9ba';
 suaDichVu("2", "Sting", ObjectId(a), "Chưa đặt")
 print(a);
 
-xoaDichVu("1")
+xoaNhanVien("NV4")
+
+db.NhanVien.find()
+
+db.NhanVien.update(
+	{GioiTinh: "Nam"},
+	{$set: {GioiTinh: "Nữ"}},
+	{
+	  upsert: false,
+	  multi: true
+	}
+)
+

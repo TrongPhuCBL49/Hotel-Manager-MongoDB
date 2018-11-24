@@ -66,6 +66,7 @@
     <Compile Include="ChucDanhDAO.cs" />
     <Compile Include="DangNhapDAO.cs" />
     <Compile Include="DataProvider.cs" />
+    <Compile Include="DatPhongDAO.cs" />
     <Compile Include="DichVuDAO.cs" />
     <Compile Include="DoiMatKhauDAO.cs" />
     <Compile Include="DSPhongDAO.cs" />

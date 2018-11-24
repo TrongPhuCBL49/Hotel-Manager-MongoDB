@@ -51,7 +51,6 @@
     <Compile Include="ChucDanhBUS.cs" />
     <Compile Include="DangNhapBUS.cs" />
     <Compile Include="DatPhongBUS.cs" />
-    <Compile Include="DatPhongDAO.cs" />
     <Compile Include="DichVuBUS.cs" />
     <Compile Include="DoiMatKhauBUS.cs" />
     <Compile Include="DSPhongBUS.cs" />

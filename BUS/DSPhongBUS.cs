@@ -31,10 +31,10 @@ namespace BUS
             foreach (DataRow item in dtb.Rows)
             {
                 PhongDTO phong = new PhongDTO();
-                phong.Id = item["ID"].ToString();
+                phong.Id = item["Id"].ToString();
                 phong.Ten = item["Ten"].ToString();
-                phong.LoaiPhong = item["IDLoai"].ToString();
-                phong.TrangThai = item["IDTrangThai"].ToString();
+                phong.LoaiPhong = item["LoaiPhong"].ToString();
+                phong.TrangThai = item["TrangThai"].ToString();
                 dsPhong.Add(phong);
             }
             return dsPhong;

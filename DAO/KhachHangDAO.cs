@@ -56,27 +56,38 @@ namespace DAO
 
         public bool ThemKhachHang(KhachHangDTO khachHang)
         {
-            //string[] param = { "@ID", "@Ten", "@NgaySinh", "@GioiTinh", "@Email", "@SDT", "@CMND", "@QuocTich" };
-            //object[] values = { khachHang.Id, khachHang.Ten, khachHang.NgaySinh, khachHang.GioiTinh, khachHang.Email, khachHang.Sdt, khachHang.Cmnd, khachHang.QuocTich };
-            //string query = "Insert Into KhachHang Values(@ID,@Ten,convert(date,@NgaySinh,105),@GioiTinh,@Email,@SDT,@CMND,@QuocTich)";
-            //return DataProvider.Instance.ExecuteNonQueryPara(query, param, values);
-            return true;
+            var cmd = new JsonCommand<BsonDocument>
+                ("{ eval: \"themKhachHang('" + khachHang.Id + "','"
+                                             + khachHang.Ten + "', ISODate('"
+                                             + khachHang.NgaySinh.ToString("yyyy-mm-dd") + "'),'"
+                                             + khachHang.GioiTinh + "','"
+                                             + khachHang.Sdt + "','"
+                                             + khachHang.Cmnd + "','"
+                                             + khachHang.QuocTich + "','"
+                                             + khachHang.Email + "')\" }");
+            var result = DataProvider.Instance.Database.RunCommand(cmd);
+            return result["retval"].ToBoolean();
         }
         public bool SuaKhachHang(KhachHangDTO khachHang)
         {
-            //string[] param = { "@ID", "@Ten", "@NgaySinh", "@GioiTinh", "@Email", "@SDT", "@CMND", "@QuocTich" };
-            //object[] values = { khachHang.Id, khachHang.Ten, khachHang.NgaySinh, khachHang.GioiTinh, khachHang.Email, khachHang.Sdt, khachHang.Cmnd, khachHang.QuocTich };
-            //string query = "Update KhachHang Set Ten=@Ten, NgaySinh=convert(date,@NgaySinh,105), GioiTinh=@GioiTinh, QuocTich=@QuocTich, SDT=@SDT, CMND=@CMND, Email=@Email Where ID=@ID";
-            //return DataProvider.Instance.ExecuteNonQueryPara(query, param, values);
-            return true;
+            var cmd = new JsonCommand<BsonDocument>
+                ("{ eval: \"suaKhachHang('" + khachHang.Id + "','"
+                                             + khachHang.Ten + "', ISODate('"
+                                             + khachHang.NgaySinh.ToString("yyyy-mm-dd") + "'),'"
+                                             + khachHang.GioiTinh + "','"
+                                             + khachHang.Sdt + "','"
+                                             + khachHang.Cmnd + "','"
+                                             + khachHang.QuocTich + "','"
+                                             + khachHang.Email + "')\" }");
+            var result = DataProvider.Instance.Database.RunCommand(cmd);
+            return result["retval"].ToBoolean();
         }
         public bool XoaKhachHang(KhachHangDTO khachHang)
         {
-            //string[] param = { "@ID" };
-            //object[] values = { khachHang.Id };
-            //string query = "Delete KhachHang Where ID=@ID";
-            //return DataProvider.Instance.ExecuteNonQueryPara(query, param, values);
-            return true;
+            var cmd = new JsonCommand<BsonDocument>
+                ("{ eval: \"xoaKhachHang('" + khachHang.Id + "')\" }");
+            var result = DataProvider.Instance.Database.RunCommand(cmd);
+            return result["retval"].ToBoolean();
         }
     }
 }
