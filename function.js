@@ -435,14 +435,121 @@ db.system.js.save({
 	}
 });
 
+db.system.js.save({
+  	_id: "xoaPhongByLoaiPhong",
+	value: function(object_Id) 
+	{
+	  try
+	  {					
+	  	db.Phong.remove(
+	  		{LoaiPhong: object_Id},
+	  		{justOne:false}
+	  	);
+	  	return 1;
+	  }
+	  catch (e){
+	  	return 0;
+	  }
+	}
+});
+
+db.system.js.save({
+  	_id: "xoaLoaiPhongAsTrigger",
+	value: function(id) 
+	{
+	  try
+	  {		
+	    var object_Id=db.LoaiPhong.findOne({Id:id})._id;
+	    xoaPhongByLoaiPhong(object_Id);
+	  	db.LoaiPhong.remove(
+	  		{Id: id}
+	  	);
+	  	return 1;
+	  }
+	  catch (e){
+	  	return 0;
+	  }
+	}
+});
+
+
+db.system.js.save({
+  	_id: "xoaNhanVienAsConstaint",
+	value: function(id) 
+	{
+	  try
+	  {		
+	  	db.Users.remove(
+	  		{IdNhanVien: id},
+	  		{justOne:false}
+	  	);
+	  	db.NhanVien.remove(
+	  		{Id: id}
+	  	);
+	  	return 1;
+	  }
+	  catch (e){
+	  	return 0;
+	  }
+	}
+});
+
+
+
+
+
+
+
+
+db.system.js.save({
+  	_id: "setDefaultAsNhanVien",
+	value: function(chucDanh) 
+	{
+	  try
+	  {					
+	  	db.Users.update(
+	  		{ChucDanh:chucDanh},
+	  		{$set:{ChucDanh:"Nhân Viên"}},
+	  		{multi:true}
+	  	);
+	  	return 1;
+	  }
+	  catch (e){
+	  	return 0;
+	  }
+	}
+});
+
+
+db.system.js.save({
+  	_id: "xoaChucDanhSetDefault",
+	value: function(id) 
+	{
+	  try
+	  {		
+	    var object_Ten=db.ChucDanh.findOne({Id:id}).TenChucDanh;
+	    setDefaultAsNhanVien(object_Ten);
+	  	db.ChucDanh.remove(
+	  		{Id: id}
+	  	);
+	  	return 1;
+	  }
+	  catch (e){
+	  	return 0;
+	  }
+	}
+});
 db.loadServerScripts()
 
 
+
+xoaLoaiPhongAsTrigger("1");
 db.DichVu.find()
 suaDichVu("Chanh Đá","5500","6")
 themChucDanh("Bảo Vệ","4");
 themDichVu("Nước Chanh","5000","6");
 themKhachHang("KH3","Nguyễn Trọng Phú",ISODate("1998-05-22"),"Nam","0873712812","291167736","Việt Nam","ntp@gmail.com")
 themLoaiPhong("4","Phòng Đôi Vip","100000","2","60000")
-themNhanVien("NV4","Nguyễn Thành Đồng",ISODate("1998-11-27T00:00:00.000+0000"),"Nam","Suối Tiên","0973712812","261167756","dattran@gmail.com")
+themNhanVien("NV1","Nguyễn Thành Đồng",ISODate("1998-11-27T00:00:00.000+0000"),"Nam","Suối Tiên","0973712812","261167756","dattran@gmail.com")
 xoaChucDanh("4")
+	
