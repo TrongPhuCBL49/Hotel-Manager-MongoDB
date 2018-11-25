@@ -21,7 +21,7 @@ namespace GUI
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
+            UserLookAndFeel.Default.SetSkinStyle(SkinStyle.DevExpress);
             Application.Run(new DangNhapGUI());
         }
     }

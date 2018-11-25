@@ -307,6 +307,7 @@
     <None Include="Resources\key %281%29.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\team.png" />
     <None Include="Resources\clipboard.png" />
     <None Include="Resources\checklist.png" />
     <None Include="Resources\cash.png" />

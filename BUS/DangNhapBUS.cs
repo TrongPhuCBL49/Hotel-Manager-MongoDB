@@ -11,6 +11,7 @@ namespace BUS
 {
     public class DangNhapBUS
     {
+
         private static DangNhapBUS instance;
         public static DangNhapBUS Instance
         {

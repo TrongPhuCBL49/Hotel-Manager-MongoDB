@@ -193,6 +193,30 @@ db.system.js.save({
 });
 
 db.system.js.save({
+  	_id: "themThuePhong",
+	value: function(id, tenKhachHang, ngaySinh, gioiTinh, sdt, cmnd, quocTich, email) 
+	{
+	  try
+	  {					
+	  	db.KhachHang.insertOne(
+	  		{Id: id,
+	  		 Ten: tenKhachHang,
+	  		 NgaySinh: ngaySinh,
+	  		 GioiTinh: gioiTinh,
+	  		 Sdt: sdt,
+	  		 Cmnd: cmnd,
+	  		 QuocTich: quocTich,
+	  		 Email: email}
+	  	);
+	  	return 1;
+	  }
+	  catch (e){
+	  	return 0;
+	  }
+	}
+});
+
+db.system.js.save({
   	_id: "xoaChucDanh",
 	value: function(id) 
 	{
@@ -313,7 +337,7 @@ db.system.js.save({
 
 db.system.js.save({
   	_id: "suaChucDanh",
-	value: function(tenChucDanh, id) 
+	value: function(id, tenChucDanh) 
 	{
 	  try
 	  {					
@@ -331,7 +355,7 @@ db.system.js.save({
 
 db.system.js.save({
   	_id: "suaDichVu",
-	value: function(tenDichVu, gia, id) 
+	value: function(id, tenDichVu, gia) 
 	{
 	  try
 	  {					
@@ -349,7 +373,7 @@ db.system.js.save({
 
 db.system.js.save({
   	_id: "suaDichVu",
-	value: function(tenDichVu, gia, id) 
+	value: function(id, tenDichVu, gia) 
 	{
 	  try
 	  {					
@@ -456,28 +480,111 @@ db.system.js.save({
 	}
 });
 
+db.system.js.save({
+  	_id: "xoaPhongByLoaiPhong",
+	value: function(object_Id) 
+	{
+	  try
+	  {					
+	  	db.Phong.remove(
+	  		{LoaiPhong: object_Id},
+	  		{justOne:false}
+	  	);
+	  	return 1;
+	  }
+	  catch (e){
+	  	return 0;
+	  }
+	}
+});
+
+db.system.js.save({
+  	_id: "xoaLoaiPhongAsTrigger",
+	value: function(id) 
+	{
+	  try
+	  {		
+	    var object_Id=db.LoaiPhong.findOne({Id:id})._id;
+	    xoaPhongByLoaiPhong(object_Id);
+	  	db.LoaiPhong.remove(
+	  		{Id: id}
+	  	);
+	  	return 1;
+	  }
+	  catch (e){
+	  	return 0;
+	  }
+	}
+});
+
+
+db.system.js.save({
+  	_id: "xoaNhanVienAsConstaint",
+	value: function(id) 
+	{
+	  try
+	  {		
+	  	db.Users.remove(
+	  		{IdNhanVien: id},
+	  		{justOne:false}
+	  	);
+	  	db.NhanVien.remove(
+	  		{Id: id}
+	  	);
+	  	return 1;
+	  }
+	  catch (e){
+	  	return 0;
+	  }
+	}
+});
+
+
+
+
+
+
+
+
+db.system.js.save({
+  	_id: "setDefaultAsNhanVien",
+	value: function(chucDanh) 
+	{
+	  try
+	  {					
+	  	db.Users.update(
+	  		{ChucDanh:chucDanh},
+	  		{$set:{ChucDanh:"Nhân Viên"}},
+	  		{multi:true}
+	  	);
+	  	return 1;
+	  }
+	  catch (e){
+	  	return 0;
+	  }
+	}
+});
+
+
+db.system.js.save({
+  	_id: "xoaChucDanhSetDefault",
+	value: function(id) 
+	{
+	  try
+	  {		
+	    var object_Ten=db.ChucDanh.findOne({Id:id}).TenChucDanh;
+	    setDefaultAsNhanVien(object_Ten);
+	  	db.ChucDanh.remove(
+	  		{Id: id}
+	  	);
+	  	return 1;
+	  }
+	  catch (e){
+	  	return 0;
+	  }
+	}
+});
+
 db.loadServerScripts()
 
-db.LoaiPhong.find()
-db.Users.find()
-db.runCommand({ eval: "idLoaiPhong('Phòng đơn thường')"})
-idLoaiPhong('Phòng đơn thường')
-xoaLoaiPhong("3")
-
-var a = '5be9f4a2f3a066a50e16f9ba';
-suaDichVu("2", "Sting", ObjectId(a), "Chưa đặt")
-print(a);
-
-xoaNhanVien("NV4")
-
-db.NhanVien.find()
-
-db.NhanVien.update(
-	{GioiTinh: "Nam"},
-	{$set: {GioiTinh: "Nữ"}},
-	{
-	  upsert: false,
-	  multi: true
-	}
-)
-
+db.Phong.find()

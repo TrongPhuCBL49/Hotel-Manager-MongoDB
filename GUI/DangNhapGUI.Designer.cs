@@ -37,15 +37,25 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.cboIpAddress = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.btnQuetIp = new DevExpress.XtraEditors.SimpleButton();
+            this.txtDatabaseName = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMatKhau.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaNhanVien.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboIpAddress.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDatabaseName.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelDangNhap
             // 
-            this.btnCancelDangNhap.Location = new System.Drawing.Point(471, 386);
+            this.btnCancelDangNhap.Location = new System.Drawing.Point(471, 752);
             this.btnCancelDangNhap.Name = "btnCancelDangNhap";
             this.btnCancelDangNhap.Size = new System.Drawing.Size(200, 56);
             this.btnCancelDangNhap.TabIndex = 4;
@@ -54,7 +64,7 @@
             // 
             // btnDangNhap
             // 
-            this.btnDangNhap.Location = new System.Drawing.Point(140, 386);
+            this.btnDangNhap.Location = new System.Drawing.Point(140, 752);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(200, 56);
             this.btnDangNhap.TabIndex = 3;
@@ -70,7 +80,7 @@
             this.groupControl1.Controls.Add(this.txtMaNhanVien);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Location = new System.Drawing.Point(38, 38);
+            this.groupControl1.Location = new System.Drawing.Point(38, 404);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(748, 317);
             this.groupControl1.TabIndex = 2;
@@ -90,7 +100,7 @@
             this.txtMatKhau.EditValue = "";
             this.txtMatKhau.Location = new System.Drawing.Point(289, 177);
             this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Properties.PasswordChar = '9';
+            this.txtMatKhau.Properties.UseSystemPasswordChar = true;
             this.txtMatKhau.Size = new System.Drawing.Size(368, 50);
             this.txtMatKhau.TabIndex = 2;
             // 
@@ -118,11 +128,67 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Mã nhân viên:";
             // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this.cboIpAddress);
+            this.groupControl2.Controls.Add(this.labelControl3);
+            this.groupControl2.Controls.Add(this.btnQuetIp);
+            this.groupControl2.Controls.Add(this.txtDatabaseName);
+            this.groupControl2.Controls.Add(this.labelControl4);
+            this.groupControl2.Location = new System.Drawing.Point(38, 44);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(748, 339);
+            this.groupControl2.TabIndex = 5;
+            this.groupControl2.Text = "Thông tin Database Server";
+            // 
+            // cboIpAddress
+            // 
+            this.cboIpAddress.Location = new System.Drawing.Point(289, 77);
+            this.cboIpAddress.Name = "cboIpAddress";
+            this.cboIpAddress.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboIpAddress.Size = new System.Drawing.Size(368, 50);
+            this.cboIpAddress.TabIndex = 1;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(38, 84);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(137, 33);
+            this.labelControl3.TabIndex = 0;
+            this.labelControl3.Text = "IP Address:";
+            // 
+            // btnQuetIp
+            // 
+            this.btnQuetIp.Location = new System.Drawing.Point(265, 255);
+            this.btnQuetIp.Name = "btnQuetIp";
+            this.btnQuetIp.Size = new System.Drawing.Size(200, 56);
+            this.btnQuetIp.TabIndex = 3;
+            this.btnQuetIp.Text = "Quét IP";
+            this.btnQuetIp.Click += new System.EventHandler(this.btnQuetIp_Click);
+            // 
+            // txtDatabaseName
+            // 
+            this.txtDatabaseName.EditValue = "";
+            this.txtDatabaseName.Location = new System.Drawing.Point(289, 167);
+            this.txtDatabaseName.Name = "txtDatabaseName";
+            this.txtDatabaseName.Size = new System.Drawing.Size(368, 50);
+            this.txtDatabaseName.TabIndex = 1;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(38, 175);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(197, 33);
+            this.labelControl4.TabIndex = 0;
+            this.labelControl4.Text = "Database Name:";
+            // 
             // DangNhapGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 33F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(829, 485);
+            this.ClientSize = new System.Drawing.Size(816, 828);
+            this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.btnCancelDangNhap);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.groupControl1);
@@ -136,6 +202,11 @@
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMatKhau.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaNhanVien.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboIpAddress.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDatabaseName.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -151,6 +222,12 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private DevExpress.XtraEditors.ComboBoxEdit cboIpAddress;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.SimpleButton btnQuetIp;
+        private DevExpress.XtraEditors.TextEdit txtDatabaseName;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
     }
 }
 
