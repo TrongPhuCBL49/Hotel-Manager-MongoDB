@@ -57,10 +57,7 @@ namespace GUI
         private void btnDatPhong_Click(object sender, EventArgs e)
         {
             if (DatPhongBUS.Instance.ThemBangThuePhong(DangNhapGUI.IdNhanVien, txtID.Text, cboPhong.Text, cboNgayDatPhong.DateTime, cboNgayTraPhong.DateTime, txtTienDatCoc.Text))
-            {
-                DatPhongBUS.Instance.UpdateTrangThaiPhong(cboPhong.Text);
                 MessageBox.Show("Đặt phòng thành công!");
-            }
             else
                 MessageBox.Show("Có lỗi xảy ra. Đặt phòng thất bại!");
         }

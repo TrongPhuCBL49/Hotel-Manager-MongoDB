@@ -29,12 +29,11 @@ namespace BUS
         {
             KhachHangDTO kh = new KhachHangDTO();
             DataRow row = DatPhongDAO.Instance.ThongTinKhachHang(Ten);
-            kh.Id = row["ID"].ToString();
+            kh.Id = row["Id"].ToString();
             kh.Ten = row["Ten"].ToString();
-            //kh.NgaySinh = DateTime.ParseExact(row["NgaySinh"].ToString(), "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
             kh.QuocTich = row["QuocTich"].ToString();
-            kh.Sdt = row["SDT"].ToString();
-            kh.Cmnd = row["CMND"].ToString();
+            kh.Sdt = row["Sdt"].ToString();
+            kh.Cmnd = row["Cmnd"].ToString();
             kh.Email = row["Email"].ToString();
             kh.GioiTinh = row["GioiTinh"].ToString();
             return kh;
@@ -50,8 +49,8 @@ namespace BUS
                 BangThuePhong.IdPhong = DatPhongDAO.Instance.IdPhong(TenPhong);
                 BangThuePhong.CheckIn = CheckIn;
                 BangThuePhong.CheckOut = CheckOut;
-                BangThuePhong.TienDatCoc = int.Parse(TienDatCoc);
-                BangThuePhong.TrangThai = 0;
+                BangThuePhong.TienDatCoc = TienDatCoc;
+                BangThuePhong.TrangThai = "Chưa thanh toán";
 
             }
             catch (Exception)
@@ -60,12 +59,6 @@ namespace BUS
             }
             return DatPhongDAO.Instance.ThemBangThuePhong(BangThuePhong);
         }
-
-        public void UpdateTrangThaiPhong(string TenPhong)
-        {
-            DatPhongDAO.Instance.UpdateTrangThaiPhong(TenPhong);
-        }
-
         public string TenNhanVien(string IdNhanVien)
         {
             return DatPhongDAO.Instance.TenNhanVien(IdNhanVien);

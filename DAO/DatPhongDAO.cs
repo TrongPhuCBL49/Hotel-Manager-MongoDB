@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 using System.Data;
+using MongoDB.Driver;
+using MongoDB.Bson;
 
 namespace DAO
 {
@@ -25,42 +27,35 @@ namespace DAO
         private DatPhongDAO() { }
         public DataRow ThongTinKhachHang(string TenKhachHang)
         {
-            //string query = "Select * From KhachHang Where Ten = N'" + TenKhachHang + "'";
-            //DataTable dtb = DataProvider.Instance.getDS(query);
-            //return dtb.Rows[0];
-            return null;
+            DataTable dtb = KhachHangDAO.Instance.DSKhachHang();
+            DataRow row = dtb.AsEnumerable().SingleOrDefault(r => r.Field<string>("Ten") == TenKhachHang);
+            return row;
         }
         public bool ThemBangThuePhong(BangThuePhongDTO bangThuePhong)
         {
-            //string[] param = { "@IDPhong", "@IDNhanVien", "@IDKhachHang", "@CheckIn", "@CheckOut", "@TienDatCoc", "@TrangThai" };
-            //object[] values = { bangThuePhong.IdPhong, bangThuePhong.IdNhanVien, bangThuePhong.IdKhachHang, bangThuePhong.CheckIn, bangThuePhong.CheckOut, bangThuePhong.TienDatCoc, bangThuePhong.TrangThai };
-            //string query = "Insert Into BangThuePhong Values(@IDPhong,@IDNhanVien,@IDKhachHang,convert(date,@CheckIn,105),convert(date,@CheckOut,105),@TienDatCoc,@TrangThai)";
-            //return DataProvider.Instance.ExecuteNonQueryPara(query, param, values);
-            return true;
+            var cmd = new JsonCommand<BsonDocument>
+                ("{ eval: \"themThuePhongTG('" + bangThuePhong.Id + "','"
+                                               + bangThuePhong.IdPhong + "','"
+                                               + bangThuePhong.IdNhanVien + "','"
+                                               + bangThuePhong.IdKhachHang + "', ISODate('"
+                                               + bangThuePhong.CheckIn.ToString("yyyy-mm-dd") + "'), ISODate('"
+                                               + bangThuePhong.CheckOut.ToString("yyyy-mm-dd") + "'),'"
+                                               + bangThuePhong.TienDatCoc + "','"
+                                               + bangThuePhong.TrangThai + "')\" }");
+            var result = DataProvider.Instance.Database.RunCommand(cmd);
+            return result["retval"].ToBoolean();
         }
         public string IdPhong(string tenPhong)
         {
-            //string query = "Select ID From Phong Where Ten = N'" + tenPhong + "'";
-            //DataTable dtb = DataProvider.Instance.getDS(query);
-            //return dtb.Rows[0]["ID"].ToString();
-            return null;
+            DataTable dtb = PhongDAO.Instance.DSPhong();
+            DataRow row = dtb.AsEnumerable().SingleOrDefault(r => r.Field<string>("Ten") == tenPhong);
+            return row["Id"].ToString();
         }
         public string TenNhanVien(string idNhanVien)
         {
-            //string query = "Select Ten From NhanVien Where ID = N'" + idNhanVien + "'";
-            //DataTable dtb = DataProvider.Instance.getDS(query);
-            //return dtb.Rows[0]["Ten"].ToString();
-            return null;
+            DataTable dtb = NhanVienDAO.Instance.DSNhanVien();
+            DataRow row = dtb.AsEnumerable().SingleOrDefault(r => r.Field<string>("Id") == idNhanVien);
+            return row["Ten"].ToString();
         }
-
-        public bool UpdateTrangThaiPhong(string tenPhong)
-        {
-            //string[] param = { "@Ten", "@IDTrangThai" };
-            //object[] values = { tenPhong, 2 };
-            //string query = "Update Phong Set IDTrangThai=@IDTrangThai Where Ten=@Ten";
-            //return DataProvider.Instance.ExecuteNonQueryPara(query, param, values);
-            return true;
-        }
-
     }
 }

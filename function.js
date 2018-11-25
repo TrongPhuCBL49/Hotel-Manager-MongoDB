@@ -193,20 +193,28 @@ db.system.js.save({
 });
 
 db.system.js.save({
-  	_id: "themThuePhong",
-	value: function(id, tenKhachHang, ngaySinh, gioiTinh, sdt, cmnd, quocTich, email) 
+  	_id: "themThuePhongTG",
+	value: function(id, idPhong, idNhanVien, idKhachHang, checkIn, checkOut, tienDatCoc, trangThai) 
 	{
 	  try
 	  {					
-	  	db.KhachHang.insertOne(
+	  	db.BangThuePhong.insertOne(
 	  		{Id: id,
-	  		 Ten: tenKhachHang,
-	  		 NgaySinh: ngaySinh,
-	  		 GioiTinh: gioiTinh,
-	  		 Sdt: sdt,
-	  		 Cmnd: cmnd,
-	  		 QuocTich: quocTich,
-	  		 Email: email}
+	  		 IdPhong: idPhong,
+	  		 IdNhanVien: idNhanVien,
+	  		 IdKhachHang: idKhachHang,
+	  		 CheckIn: checkIn,
+	  		 CheckOut: checkOut,
+	  		 TienDatCoc: tienDatCoc,
+	  		 TrangThai: trangThai}
+	  	);
+	  	db.Phong.update(
+	  		{Id: idPhong},
+	  		{$set: {TrangThai: "Đã đặt"}},
+	  		{
+	  		  upsert: false,
+	  		  multi: false
+	  		}
 	  	);
 	  	return 1;
 	  }
@@ -587,4 +595,12 @@ db.system.js.save({
 
 db.loadServerScripts()
 
+db.Phong.update(
+	{TrangThai: "Đã đặt"},
+	{$set: {TrangThai: "Chưa đặt"}},
+	{
+  		multi: true
+	}
+)
 db.Phong.find()
+db.BangThuePhong.find()
