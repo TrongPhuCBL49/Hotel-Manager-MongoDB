@@ -16,6 +16,11 @@ namespace DAO
     {
         //const string strCon = "mongodb://localhost:27017";
         //const string nameDtb = "HotelManager";
+        string userName = "admin";
+        string pass = "123";
+        string host = "localhost";
+        string databaseName = "HotelManager";
+
 
         private MongoClient client;
         private IMongoDatabase database;
@@ -44,11 +49,9 @@ namespace DAO
         {
             try
             {
-                string userName = "admin";
-                string pass = "123";
-                MongoClient client = new MongoClient("mongodb://" + userName + ":" + pass + "@" + "192.168.137.167" + ":27017/admin");
+                MongoClient client = new MongoClient("mongodb://" + userName + ":" + pass + "@" + host + ":27017/admin");
 
-                database = client.GetDatabase("HotelManager");
+                database = client.GetDatabase(databaseName);
             }
             catch (Exception ex)
             {

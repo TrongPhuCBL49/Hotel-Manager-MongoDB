@@ -85,6 +85,7 @@ namespace GUI
             }
             MessageBox.Show("Đã quét Ip xong!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
         private string ThisIp()
         {
             IPHostEntry host;
@@ -97,6 +98,7 @@ namespace GUI
             }
             return thisIp;
         }
+
         private void p_PingCompleted(object sender, PingCompletedEventArgs e)
         {
             string ip = (string)e.UserState;

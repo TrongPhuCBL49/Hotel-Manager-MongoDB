@@ -489,6 +489,45 @@ db.system.js.save({
 });
 
 db.system.js.save({
+  	_id: "themRole",
+	value: function(tenRole) 
+	{
+	  try
+	  {					
+	    use admin;
+		db.createRole()
+	  	);
+	  	return 1;
+	  }
+	  catch (e){
+	  	return 0;
+	  }
+	}
+});
+
+    "updateRole" : "GiamDoc", 
+    "privileges" : [
+        {
+            "resource" : {
+                "anyResource" : true
+            }, 
+            "actions" : [
+                "anyAction"
+            ]
+        }
+    ], 
+    "roles" : [
+
+    ]
+
+
+
+
+
+
+
+
+db.system.js.save({
   	_id: "xoaPhongByLoaiPhong",
 	value: function(object_Id) 
 	{
