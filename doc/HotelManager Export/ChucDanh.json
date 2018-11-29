@@ -1,0 +1,10 @@
+{ 
+    "_id" : ObjectId("5be9e781f3a066a50e16f9b1"), 
+    "TenChucDanh" : "Giám đốc", 
+    "Id" : "1"
+}
+{ 
+    "_id" : ObjectId("5bfae8ae6a22918c93572094"), 
+    "TenChucDanh" : "Lễ tân", 
+    "Id" : "3"
+}

@@ -1,0 +1,33 @@
+{ 
+    "_id" : ObjectId("5bea0b32f3a066a50e16f9cb"), 
+    "Id" : "KH1", 
+    "Ten" : "Phạm Khoa Nam", 
+    "NgaySinh" : ISODate("1998-05-22T00:00:00.000+0000"), 
+    "GioiTinh" : "Nam", 
+    "Sdt" : "0873712812", 
+    "Cmnd" : "291167733", 
+    "QuocTich" : "Việt Nam", 
+    "Email" : "nampro123@gmail.com"
+}
+{ 
+    "_id" : ObjectId("5bea0b54f3a066a50e16f9cc"), 
+    "Id" : "KH2", 
+    "Ten" : "Nguyễn Ngọc Vũ Giao", 
+    "NgaySinh" : ISODate("1998-01-10T00:00:00.000+0000"), 
+    "GioiTinh" : "Nam", 
+    "Sdt" : "0872912812", 
+    "Cmnd" : "291867733", 
+    "QuocTich" : "Việt Nam", 
+    "Email" : "giaovu456@gmail.com"
+}
+{ 
+    "_id" : ObjectId("5bf05ecce0085178819a3fbd"), 
+    "Id" : "KH3", 
+    "Ten" : "Nguyễn Trọng Phú", 
+    "NgaySinh" : ISODate("1997-12-27T00:00:00.000+0000"), 
+    "GioiTinh" : "Nam", 
+    "Sdt" : "0987365266", 
+    "Cmnd" : "265578376", 
+    "QuocTich" : "Việt Nam", 
+    "Email" : "abcdef@gmail.com"
+}

@@ -12,6 +12,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Net.NetworkInformation;
 using DTO;
+using DAO;
 
 namespace GUI
 {
@@ -33,12 +34,15 @@ namespace GUI
 
         void login()
         {
+            DataProvider.host = cboIpAddress.Text;
+            DataProvider.databaseName = txtDatabaseName.Text;
+            DataProvider.userName = txtMaNhanVien.Text;
+            DataProvider.pass = txtMatKhau.Text;
+
             if (DangNhapBUS.Instance.KiemTraUser(txtMaNhanVien.Text, txtMatKhau.Text))
             {
                 IdNhanVien = txtMaNhanVien.Text;
                 IdChucDanh = DangNhapBUS.Instance.IdChucDanh(IdNhanVien);
-                ConnectDB.Instance.IpAddress = cboIpAddress.Text;
-                ConnectDB.Instance.DatabaseName = txtDatabaseName.Text;
                 MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Form f = new MainGUI();
                 //Xử lý khi đóng form con thì sẽ chạy event show lại form này

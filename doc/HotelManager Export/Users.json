@@ -1,0 +1,12 @@
+{ 
+    "_id" : ObjectId("5be9ec9ff3a066a50e16f9b5"), 
+    "IdNhanVien" : "NV1", 
+    "Password" : "123", 
+    "ChucDanh" : "Giám đốc"
+}
+{ 
+    "_id" : ObjectId("5be9f385f3a066a50e16f9b6"), 
+    "IdNhanVien" : "NV2", 
+    "Password" : "456", 
+    "ChucDanh" : "Nhân Viên"
+}

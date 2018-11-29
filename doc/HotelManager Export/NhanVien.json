@@ -1,0 +1,33 @@
+{ 
+    "_id" : ObjectId("5bea0a2ff3a066a50e16f9c8"), 
+    "Id" : "NV1", 
+    "Ten" : "Nguyễn Thị Thanh Trà", 
+    "NgaySinh" : ISODate("1999-09-27T00:00:00.000+0000"), 
+    "GioiTinh" : "Nữ", 
+    "DiaChi" : "8 Âu Dương Lân", 
+    "Sdt" : "0973722822", 
+    "Cmnd" : "251185733", 
+    "Email" : "betra@gmail.com"
+}
+{ 
+    "_id" : ObjectId("5bea0a5ff3a066a50e16f9c9"), 
+    "Id" : "NV2", 
+    "Ten" : "Nguyễn Trọng Phú", 
+    "NgaySinh" : ISODate("1998-10-22T00:00:00.000+0000"), 
+    "GioiTinh" : "Nữ", 
+    "DiaChi" : "350/6 Bùi Hữu Nghĩa", 
+    "Sdt" : "0973712822", 
+    "Cmnd" : "251167733", 
+    "Email" : "trongphu@gmail.com"
+}
+{ 
+    "_id" : ObjectId("5bea0a8ff3a066a50e16f9ca"), 
+    "Id" : "NV3", 
+    "Ten" : "Hồ Ngọc Sơn Hà Vip", 
+    "NgaySinh" : ISODate("1997-12-27T00:00:00.000+0000"), 
+    "GioiTinh" : "Nữ", 
+    "DiaChi" : "6 Hoàng Diệu 2", 
+    "Sdt" : "0973712812", 
+    "Cmnd" : "261167733", 
+    "Email" : "sonhavip5@gmail.com"
+}

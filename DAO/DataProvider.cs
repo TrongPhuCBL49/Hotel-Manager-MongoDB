@@ -14,13 +14,11 @@ namespace DAO
 {
     public class DataProvider
     {
-        //const string strCon = "mongodb://localhost:27017";
-        //const string nameDtb = "HotelManager";
-        string userName = "admin";
-        string pass = "123";
-        string host = "localhost";
-        string databaseName = "HotelManager";
 
+        public static string userName;
+        public static string pass;
+        public static string host;
+        public static string databaseName;
 
         private MongoClient client;
         private IMongoDatabase database;

@@ -224,7 +224,7 @@ db.system.js.save({
 	}
 });
 
-db.system.js.save({
+/*db.system.js.save({
   	_id: "xoaChucDanh",
 	value: function(id) 
 	{
@@ -239,7 +239,7 @@ db.system.js.save({
 	  	return 0;
 	  }
 	}
-});
+});*/
 
 db.system.js.save({
   	_id: "xoaDichVu",
@@ -275,7 +275,7 @@ db.system.js.save({
 	}
 });
 
-db.system.js.save({
+/*db.system.js.save({
   	_id: "xoaLoaiPhong",
 	value: function(id) 
 	{
@@ -290,9 +290,9 @@ db.system.js.save({
 	  	return 0;
 	  }
 	}
-});
+});*/
 
-db.system.js.save({
+/*db.system.js.save({
   	_id: "xoaNhanVien",
 	value: function(id) 
 	{
@@ -307,7 +307,7 @@ db.system.js.save({
 	  	return 0;
 	  }
 	}
-});
+});*/
 
 db.system.js.save({
   	_id: "xoaPhong",
@@ -488,6 +488,45 @@ db.system.js.save({
 	}
 });
 
+/*db.system.js.save({
+  	_id: "themRole",
+	value: function(tenRole) 
+	{
+	  try
+	  {					
+	    use admin;
+		db.createRole()
+	  	);
+	  	return 1;
+	  }
+	  catch (e){
+	  	return 0;
+	  }
+	}
+});
+
+    "updateRole" : "GiamDoc", 
+    "privileges" : [
+        {
+            "resource" : {
+                "anyResource" : true
+            }, 
+            "actions" : [
+                "anyAction"
+            ]
+        }
+    ], 
+    "roles" : [
+
+    ]*/
+
+
+
+
+
+
+
+
 db.system.js.save({
   	_id: "xoaPhongByLoaiPhong",
 	value: function(object_Id) 
@@ -507,7 +546,7 @@ db.system.js.save({
 });
 
 db.system.js.save({
-  	_id: "xoaLoaiPhongAsTrigger",
+  	_id: "xoaLoaiPhong",
 	value: function(id) 
 	{
 	  try
@@ -527,7 +566,7 @@ db.system.js.save({
 
 
 db.system.js.save({
-  	_id: "xoaNhanVienAsConstaint",
+  	_id: "xoaNhanVien",
 	value: function(id) 
 	{
 	  try
@@ -554,7 +593,7 @@ db.system.js.save({
 
 
 
-db.system.js.save({
+/*db.system.js.save({
   	_id: "setDefaultAsNhanVien",
 	value: function(chucDanh) 
 	{
@@ -571,17 +610,21 @@ db.system.js.save({
 	  	return 0;
 	  }
 	}
-});
+});*/
 
 
 db.system.js.save({
-  	_id: "xoaChucDanhSetDefault",
+  	_id: "xoaChucDanh",
 	value: function(id) 
 	{
 	  try
 	  {		
 	    var object_Ten=db.ChucDanh.findOne({Id:id}).TenChucDanh;
-	    setDefaultAsNhanVien(object_Ten);
+	    db.Users.update(
+	  		{ChucDanh:object_Ten},
+	  		{$set:{ChucDanh:"Nhân Viên"}},
+	  		{multi:true}
+	  	);
 	  	db.ChucDanh.remove(
 	  		{Id: id}
 	  	);
@@ -593,9 +636,9 @@ db.system.js.save({
 	}
 });
 
-db.loadServerScripts()
+db.loadServerScripts();
 
-db.Phong.update(
+/*db.Phong.update(
 	{TrangThai: "Đã đặt"},
 	{$set: {TrangThai: "Chưa đặt"}},
 	{
@@ -603,4 +646,10 @@ db.Phong.update(
 	}
 )
 db.Phong.find()
-db.BangThuePhong.find()
+db.BangThuePhong.find()*/
+
+db.Users.find()
+
+use HotelManagerPhu
+
+db.createCollection("Test")

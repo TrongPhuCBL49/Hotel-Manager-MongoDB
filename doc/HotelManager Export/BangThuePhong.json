@@ -1,0 +1,22 @@
+{ 
+    "_id" : ObjectId("5bfb190b6a22918c93572963"), 
+    "Id" : "1", 
+    "IdTenPhong" : "DV201", 
+    "IdNhanVien" : "NV1", 
+    "IdKhachHang" : "KH3", 
+    "CheckIn" : ISODate("2017-12-26T00:00:00.000+0000"), 
+    "CheckOut" : ISODate("2017-12-28T00:00:00.000+0000"), 
+    "TienDatCoc" : "200000", 
+    "TrangThai" : "Chưa thanh toán"
+}
+{ 
+    "_id" : ObjectId("5bfb1be46a22918c93572a7f"), 
+    "Id" : "", 
+    "IdPhong" : "DT101", 
+    "IdNhanVien" : "NV1", 
+    "IdKhachHang" : "KH2", 
+    "CheckIn" : ISODate("2017-12-26T00:00:00.000+0000"), 
+    "CheckOut" : ISODate("2017-12-28T00:00:00.000+0000"), 
+    "TienDatCoc" : "100000", 
+    "TrangThai" : "Chưa thanh toán"
+}

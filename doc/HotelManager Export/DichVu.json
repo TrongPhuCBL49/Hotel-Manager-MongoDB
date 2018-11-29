@@ -1,0 +1,30 @@
+{ 
+    "_id" : ObjectId("5bea0565f3a066a50e16f9c1"), 
+    "Ten" : "Sting", 
+    "Gia" : "10000", 
+    "Id" : "2"
+}
+{ 
+    "_id" : ObjectId("5bea057cf3a066a50e16f9c2"), 
+    "Ten" : "Bò húc", 
+    "Gia" : "15000", 
+    "Id" : "3"
+}
+{ 
+    "_id" : ObjectId("5beb131bf3a066a50e16f9cd"), 
+    "Id" : "4", 
+    "Ten" : "Giặt ủi", 
+    "Gia" : "20000"
+}
+{ 
+    "_id" : ObjectId("5beb1d73e4e0954f6b33ea3f"), 
+    "Id" : "5", 
+    "Ten" : "Snack", 
+    "Gia" : "50000"
+}
+{ 
+    "_id" : ObjectId("5bf24d6ea426b745f933466d"), 
+    "Ten" : "Coca", 
+    "Gia" : "12000", 
+    "Id" : "1"
+}

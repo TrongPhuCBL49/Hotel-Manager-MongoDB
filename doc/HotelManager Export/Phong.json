@@ -1,0 +1,77 @@
+{ 
+    "_id" : ObjectId("5be9f876f3a066a50e16f9bc"), 
+    "Id" : "DT101", 
+    "Ten" : "101", 
+    "LoaiPhong" : ObjectId("5be9f4a2f3a066a50e16f9ba"), 
+    "TrangThai" : "Đã đặt"
+}
+{ 
+    "_id" : ObjectId("5bea0444f3a066a50e16f9bd"), 
+    "Id" : "DT102", 
+    "Ten" : "102", 
+    "LoaiPhong" : ObjectId("5be9f4a2f3a066a50e16f9ba"), 
+    "TrangThai" : "Chưa đặt"
+}
+{ 
+    "_id" : ObjectId("5bea0456f3a066a50e16f9be"), 
+    "Id" : "DT103", 
+    "Ten" : "103", 
+    "LoaiPhong" : ObjectId("5be9f4a2f3a066a50e16f9ba"), 
+    "TrangThai" : "Chưa đặt"
+}
+{ 
+    "_id" : ObjectId("5bea0483f3a066a50e16f9bf"), 
+    "Id" : "DV201", 
+    "Ten" : "201", 
+    "LoaiPhong" : ObjectId("5bf1f59da426b745f9333971"), 
+    "TrangThai" : "Đã đặt"
+}
+{ 
+    "_id" : ObjectId("5bfaeaa46a22918c93572167"), 
+    "Id" : "DT104", 
+    "Ten" : "104", 
+    "LoaiPhong" : ObjectId("5be9f4a2f3a066a50e16f9ba"), 
+    "TrangThai" : "Chưa đặt"
+}
+{ 
+    "_id" : ObjectId("5bfaeac96a22918c9357218d"), 
+    "Id" : "DDT105", 
+    "Ten" : "105", 
+    "LoaiPhong" : ObjectId("5be9f4f9f3a066a50e16f9bb"), 
+    "TrangThai" : "Chưa đặt"
+}
+{ 
+    "_id" : ObjectId("5bfaeae26a22918c935721b5"), 
+    "Id" : "DDT106", 
+    "Ten" : "106", 
+    "LoaiPhong" : ObjectId("5be9f4f9f3a066a50e16f9bb"), 
+    "TrangThai" : "Chưa đặt"
+}
+{ 
+    "_id" : ObjectId("5bfaeb056a22918c935721e5"), 
+    "Id" : "DDT107", 
+    "Ten" : "107", 
+    "LoaiPhong" : ObjectId("5be9f4f9f3a066a50e16f9bb"), 
+    "TrangThai" : "Chưa đặt"
+}
+{ 
+    "_id" : ObjectId("5bfaeb336a22918c93572219"), 
+    "Id" : "DV202", 
+    "Ten" : "202", 
+    "LoaiPhong" : ObjectId("5bf1f59da426b745f9333971"), 
+    "TrangThai" : "Chưa đặt"
+}
+{ 
+    "_id" : ObjectId("5bfaeb656a22918c93572284"), 
+    "Id" : "DV203", 
+    "Ten" : "203", 
+    "LoaiPhong" : ObjectId("5bf1f59da426b745f9333971"), 
+    "TrangThai" : "Chưa đặt"
+}
+{ 
+    "_id" : ObjectId("5bfaeb7a6a22918c935722ba"), 
+    "Id" : "DV204", 
+    "Ten" : "204", 
+    "LoaiPhong" : ObjectId("5bf1f59da426b745f9333971"), 
+    "TrangThai" : "Chưa đặt"
+}

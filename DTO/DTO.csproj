@@ -50,7 +50,6 @@
   <ItemGroup>
     <Compile Include="BangThuePhongDTO.cs" />
     <Compile Include="ChucDanhDTO.cs" />
-    <Compile Include="ConnectDB.cs" />
     <Compile Include="DichVuDTO.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

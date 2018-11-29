@@ -1,0 +1,24 @@
+{ 
+    "_id" : ObjectId("5be9f4a2f3a066a50e16f9ba"), 
+    "Id" : "1", 
+    "Ten" : "Phòng đơn thường", 
+    "Gia" : "50000", 
+    "SoGiuong" : "1", 
+    "TienPhuThu" : "30000"
+}
+{ 
+    "_id" : ObjectId("5be9f4f9f3a066a50e16f9bb"), 
+    "Id" : "2", 
+    "Ten" : "Phòng đôi thường", 
+    "Gia" : "80000", 
+    "SoGiuong" : "2", 
+    "TienPhuThu" : "45000"
+}
+{ 
+    "_id" : ObjectId("5bf1f59da426b745f9333971"), 
+    "Id" : "3", 
+    "Ten" : "Phòng đơn vip 2", 
+    "Gia" : "110000", 
+    "SoGiuong" : "1", 
+    "TienPhuThu" : "50000"
+}
